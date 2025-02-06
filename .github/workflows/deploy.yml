@@ -44,7 +44,7 @@ jobs:
         run: npm ci
 
       - name: Build application
-        run: npm run next build
+        run: npx --no-install next build
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
