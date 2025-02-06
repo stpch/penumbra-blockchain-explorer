@@ -1,0 +1,8 @@
+.root {
+  min-width: 1024px;
+  max-width: 1600px;
+  padding-right: calc(4 * var(--spacing));
+  padding-left: calc(4 * var(--spacing));
+  margin-right: auto;
+  margin-left: auto;
+}
