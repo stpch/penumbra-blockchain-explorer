@@ -2,7 +2,7 @@
 /node_modules
 
 # Build and test artifacts
-/.next
+.next
 /build
 
 # TypeScript
