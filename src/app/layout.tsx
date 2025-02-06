@@ -1,6 +1,7 @@
 import '../lib/css/main.css';
 import type { Metadata } from 'next';
 import { FC, ReactNode } from 'react';
+import { NavigationBar } from '../components/server';
 import { rootTitle } from '../lib/constants';
 
 export const metadata: Metadata = {
@@ -22,7 +23,10 @@ interface Props {
 const RootLayout: FC<Props> = async props => {
   return (
     <html lang='en'>
-      <body>{props.children}</body>
+      <body>
+        <NavigationBar />
+        {props.children}
+      </body>
     </html>
   );
 };
