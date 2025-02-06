@@ -6,8 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --ext=ts,tsx src",
-    "lint:fix": "next lint --fix --ext=ts,tsx src",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "stylelint": "stylelint src/**/*.css",
+    "stylelint:fix": "stylelint --fix src/**/*.css",
     "typecheck": "tsc"
   },
   "dependencies": {
