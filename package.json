@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "clean": "npx rimraf .next coverage",
+    "clean": "npx rimraf .next coverage out",
     "dev": "next dev --turbopack",
     "lint": "next lint",
     "lint:fix": "next lint --fix",

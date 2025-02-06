@@ -6,6 +6,7 @@
 .swc
 /build
 /coverage
+/out
 
 # TypeScript
 *.tsbuildinfo

@@ -1,9 +1,10 @@
 import '../lib/css/main.css';
 import type { Metadata } from 'next';
 import { FC, ReactNode } from 'react';
+import { rootTitle } from '../lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Penumbra Blockchain Explorer',
+  title: rootTitle,
   description: 'PK Labs frontend developer onboarding task.',
   icons: [
     {
