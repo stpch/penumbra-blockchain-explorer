@@ -16,6 +16,9 @@ html {
 body {
   margin: 0;
   background: var(--background-color);
+  background-position: center 85%;
+  background-repeat: no-repeat;
+  background-size: 75%;
   color: var(--color);
   font: 1rem/1.25 var(--font-family);
 }

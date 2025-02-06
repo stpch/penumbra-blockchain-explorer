@@ -1,6 +1,7 @@
 import '../lib/css/main.css';
 import type { Metadata } from 'next';
 import { FC, ReactNode } from 'react';
+import background from '../../public/background.svg';
 import { NavigationBar } from '../components/server';
 import { rootTitle } from '../lib/constants';
 
@@ -23,7 +24,7 @@ interface Props {
 const RootLayout: FC<Props> = async props => {
   return (
     <html lang='en'>
-      <body>
+      <body style={{ backgroundImage: `url(${background.src})` }}>
         <NavigationBar />
         {props.children}
       </body>
