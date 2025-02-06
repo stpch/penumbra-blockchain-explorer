@@ -1,0 +1,13 @@
+:root {
+  /* Main theme */
+  --font-family: Poppins, sans-serif;
+  --color: #fafafa;
+  --background-color: #0d0d0d;
+
+  /* Layout */
+  --spacing: 8px;
+
+  /* Animation */
+  --fastOutSlowIn: cubic-bezier(0.4, 0, 0.2, 1);
+  --easeInOut: cubic-bezier(0.4, 0, 0.6, 1);
+}
