@@ -3,6 +3,7 @@
 
 # Build and test artifacts
 .next
+.swc
 /build
 
 # TypeScript
