@@ -20,5 +20,5 @@ body {
   background-repeat: no-repeat;
   background-size: 75%;
   color: var(--color);
-  font: 1rem/1.25 var(--font-family);
+  font: 1rem/1.25 sans-serif;
 }
