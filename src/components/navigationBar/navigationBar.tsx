@@ -1,6 +1,4 @@
 /* istanbul ignore file */
-'use client';
-
 import clsx from 'clsx';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';

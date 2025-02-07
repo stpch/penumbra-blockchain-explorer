@@ -1,6 +1,4 @@
 /* istanbul ignore file */
-'use client';
-
 import clsx from 'clsx';
 import { FC, ReactElement } from 'react';
 import { Props as TabProps } from './tab';
