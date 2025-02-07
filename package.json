@@ -8,7 +8,7 @@
     "dev": "next dev --turbopack",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "start": "npx serve out",
+    "start": "next start",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "stylelint --fix src/**/*.css",
     "test": "jest",

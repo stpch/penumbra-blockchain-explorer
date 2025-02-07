@@ -1,3 +1,4 @@
+# https://nextjs.org/docs/app/building-your-application/deploying/static-exports
 name: Deploy Next.js application to GitHub Pages
 
 on:
