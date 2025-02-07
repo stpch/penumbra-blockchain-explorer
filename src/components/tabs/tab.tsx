@@ -18,6 +18,9 @@ const Tab: FC<Props> = props => {
   const pathname = usePathname();
   const active = props.href === '/' ? pathname === '/' : pathname.startsWith(props.href);
 
+  console.log('pathname:', pathname);
+  console.log('props.href:', props.href);
+
   useEffect(() => {
     if (active) {
       props.onActive.call(undefined, props.label);
