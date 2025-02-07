@@ -11,6 +11,7 @@
 }
 
 .tab {
+  position: relative;
   display: flex;
   height: 100%;
   align-items: center;
@@ -27,20 +28,27 @@
     color 200ms var(--fastOutSlowIn),
     background-position 200ms var(--fastOutSlowIn);
 
+  &::before {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primaryColor);
+    content: "";
+    transform: translateX(0);
+    transition:
+      width 200ms var(--fastOutSlowIn),
+      transform 200ms var(--fastOutSlowIn);
+  }
+
   &.active {
     background-position-y: 0;
     color: var(--textColor);
-  }
-}
 
-.indicator {
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  height: 0;
-  background: var(--primaryColor);
-  transition:
-    transform 200ms var(--fastOutSlowIn),
-    width 200ms var(--fastOutSlowIn),
-    height 200ms var(--fastOutSlowIn);
+    &::before {
+      width: 100%;
+      transform: translateX(-50%);
+    }
+  }
 }

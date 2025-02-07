@@ -3,4 +3,6 @@
   height: 88px;
   align-items: center;
   justify-content: space-between;
+  padding-right: calc(4 * var(--spacing));
+  padding-left: calc(4 * var(--spacing));
 }
