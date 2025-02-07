@@ -19,6 +19,6 @@ body {
   background-position: center 85%;
   background-repeat: no-repeat;
   background-size: 75%;
-  color: var(--color);
+  color: var(--textColor);
   font: 1rem/1.25 sans-serif;
 }

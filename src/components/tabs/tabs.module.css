@@ -1,0 +1,46 @@
+.root {
+  --height: 52px;
+  position: relative;
+  display: flex;
+  height: var(--height);
+  align-items: center;
+  padding: 0 calc(2 * var(--spacing));
+  border-radius: calc(var(--height) / 2);
+  background: var(--surface);
+  gap: calc(2 * var(--spacing));
+}
+
+.tab {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  background-image: radial-gradient(
+    50% 100% at 50% 100%,
+    rgba(186, 77, 20, 0.35) 0%,
+    rgba(186, 77, 20, 0) 95%
+  );
+  background-position-y: var(--height);
+  background-repeat: no-repeat;
+  color: var(--textColorDark);
+  text-decoration: none;
+  transition:
+    color 200ms var(--fastOutSlowIn),
+    background-position 200ms var(--fastOutSlowIn);
+
+  &.active {
+    background-position-y: 0;
+    color: var(--textColor);
+  }
+}
+
+.indicator {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  height: 0;
+  background: var(--primaryColor);
+  transition:
+    transform 200ms var(--fastOutSlowIn),
+    width 200ms var(--fastOutSlowIn),
+    height 200ms var(--fastOutSlowIn);
+}
