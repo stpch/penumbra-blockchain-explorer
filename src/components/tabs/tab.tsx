@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC, ReactNode, useEffect } from 'react';
+import nextConfig from '../../../next.config';
 import styles from './tabs.module.css';
 
 export interface Props {
@@ -16,7 +17,8 @@ export interface Props {
 
 const Tab: FC<Props> = props => {
   const pathname = usePathname();
-  const active = props.href === '/' ? pathname === '/' : pathname.startsWith(props.href);
+  const root = `${nextConfig.basePath}/`;
+  const active = props.href === root ? pathname === root : pathname.startsWith(props.href);
 
   useEffect(() => {
     if (active) {
