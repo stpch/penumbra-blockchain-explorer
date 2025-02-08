@@ -7,3 +7,4 @@ steps:
       - nextjs-app
       - --source.
       - --allow-unauthenticated
+      - --set-env-vars _BRANCH_NAME=${_BRANCH_NAME},_COMMIT_SHA=${_COMMIT_SHA}
