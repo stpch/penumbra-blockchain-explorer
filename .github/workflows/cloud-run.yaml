@@ -58,6 +58,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          repository: stpch/penumbra-blockchain-explorer
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
