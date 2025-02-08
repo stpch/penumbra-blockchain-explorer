@@ -1,19 +1,26 @@
 :root {
   /* Typography */
-  --primary-font-family: Poppins;
-  --secondary-font-family: "Work Sans";
+  --fontPrimary: Poppins;
+  --fontSecondary: "Work Sans";
+  --fontSizeBase: 1rem;
+  --fontSizeSmall: calc(1rem / 16 * 14);
 
   /* Colors */
-  --text-color: #fafafa;
-  --text-color-dark: #a3a3a3;
-  --background-color: #0d0d0d;
+  --text: #fafafa;
+  --textDark: #a3a3a3;
+  --background: #0d0d0d;
   --surface: rgba(250, 250, 250, 0.05);
-  --primary-color: #ba4d14;
+  --surfaceLight: rgba(250, 250, 250, 0.1);
+  --primary: #ba4d14;
+  --successLight: #55d383;
 
   /* Layout */
   --unit: 8px;
+  --rounded: 16px;
+  --roundedSmall: 8px;
+  --roundedFull: 9999px;
 
   /* Animation */
-  --fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.6, 1);
+  --fastOutSlowIn: cubic-bezier(0.4, 0, 0.2, 1);
+  --easeInOut: cubic-bezier(0.4, 0, 0.6, 1);
 }

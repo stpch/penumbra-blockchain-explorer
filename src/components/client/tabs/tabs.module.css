@@ -1,5 +1,5 @@
 .root {
-  --height: 52px;
+  --height: calc(7 * var(--unit));
   position: relative;
   display: flex;
   height: var(--height);
@@ -22,11 +22,11 @@
   );
   background-position-y: var(--height);
   background-repeat: no-repeat;
-  color: var(--text-color-dark);
+  color: var(--textDark);
   text-decoration: none;
   transition:
-    color 200ms var(--fast-out-slow-in),
-    background-position 200ms var(--fast-out-slow-in);
+    color 200ms var(--fastOutSlowIn),
+    background-position 200ms var(--fastOutSlowIn);
 
   &::before {
     position: absolute;
@@ -34,17 +34,17 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--primary);
     content: "";
     transform: translateX(0);
     transition:
-      width 200ms var(--fast-out-slow-in),
-      transform 200ms var(--fast-out-slow-in);
+      width 200ms var(--fastOutSlowIn),
+      transform 200ms var(--fastOutSlowIn);
   }
 
   &.active {
     background-position-y: 0;
-    color: var(--text-color);
+    color: var(--text);
 
     &::before {
       width: calc(100% - 2 * var(--unit));

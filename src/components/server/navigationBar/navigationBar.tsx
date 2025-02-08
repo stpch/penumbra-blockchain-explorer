@@ -11,13 +11,16 @@ interface Props {
 
 const NavigationBar: FC<Props> = props => (
   <header className={clsx(styles.root, props.className)}>
-    <Image src='/logo.png' alt='Noctis' width={120} height={33} />
+    <div className={styles.group}>
+      <Image src='/logo.png' alt='Noctis' width={120} height={33} />
+      <div className={styles.dropdown}>Marinnet</div>
+    </div>
     <Tabs>
       <Tab href='/' label='Home' />
       <Tab href='/blocks' label='Blocks' />
       <Tab href='/transactions' label='Transactions' />
     </Tabs>
-    <div>TODO: Search and price</div>
+    <div className={styles.group}>TODO: Search and price</div>
   </header>
 );
 

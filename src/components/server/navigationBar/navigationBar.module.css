@@ -1,8 +1,27 @@
 .root {
   display: flex;
-  height: 88px;
+  height: calc(11 * var(--unit));
   align-items: center;
   justify-content: space-between;
   padding-right: calc(4 * var(--unit));
   padding-left: calc(4 * var(--unit));
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: calc(2 * var(--unit));
+}
+
+.dropdown {
+  display: flex;
+  width: 110px;
+  height: calc(5.5 * var(--unit));
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--roundedFull);
+  background: var(--surfaceLight);
+  font-size: var(--fontSizeSmall);
+  font-weight: 500;
+  gap: calc(0.5 * var(--unit));
 }
