@@ -23,7 +23,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment-url: https://penumbra-blockchain-explorer-426149560589.europe-west6.run.app/
           initial-status: in_progress
-          description: Deploy to Google Cloud
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
