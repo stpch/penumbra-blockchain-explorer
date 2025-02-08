@@ -77,7 +77,7 @@ jobs:
       - name: Trigger Cloud Build
         id: cloudbuild
         run: |
-          BUILD_ID=$(gcloud builds submit --config cloudbuild.yaml --no-source --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }} --print-revision | jq -r '.id')
+          BUILD_ID=$(gcloud builds submit --config cloudbuild.yaml --no-source --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }} --format="json" | jq -r '.id')
           echo "BUILD_ID=$BUILD_ID" >> $GITHUB_ENV
 
       - name: Get Cloud Build status
