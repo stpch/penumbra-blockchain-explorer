@@ -1,4 +1,4 @@
-name: Deploy Next.js application to Google Cloud Run
+name: Deploy to Google Cloud Run
 
 on:
   push:
@@ -11,6 +11,8 @@ jobs:
     permissions:
       contents: read
       deployments: write
+    outputs:
+      deployment_id: ${{ steps.deployment.outputs.deployment_id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,12 +22,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment-url: https://penumbra-blockchain-explorer-426149560589.europe-west6.run.app/
-
-      - uses: chrnorm/deployment-status@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          state: in_progress
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          initial-status: in_progress
+          description: Deploy to Google Cloud Run
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -100,12 +98,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: success
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ needs.test.outputs.deployment_id }}
 
       - if: failure()
         uses: chrnorm/deployment-status@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           state: failure
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ needs.test.outputs.deployment_id }}
 
