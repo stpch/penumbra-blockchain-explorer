@@ -1,4 +1,5 @@
 .root {
-  display: flex;
+  display: grid;
   gap: calc(2 * var(--unit));
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
 }
