@@ -7,10 +7,12 @@
   background-color: var(--surface);
   background-image: radial-gradient(
     100% 100% at 0% 0%,
-    rgba(193, 166, 204, 0.25) 0%,
-    rgba(193, 166, 204, 0.025) 100%
+    var(--panelGradientStartColor) 0%,
+    var(--panelGradientStopColor) 100%
   );
   grid-template: 1fr 1fr / 1fr 1fr;
+  --panelGradientStartColor: rgba(193, 166, 204, 0.25);
+  --panelGradientStopColor: rgba(193, 166, 204, 0.025);
 }
 
 .header {
