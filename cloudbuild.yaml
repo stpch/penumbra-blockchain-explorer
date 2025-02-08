@@ -5,6 +5,8 @@ steps:
       - run
       - deploy
       - nextjs-app
-      - --source.
+      - --source
+      - .
       - --allow-unauthenticated
-      - --substitutions _BRANCH_NAME=${_BRANCH_NAME},_COMMIT_SHA=${_COMMIT_SHA}
+      - --substitutions
+      - _BRANCH_NAME=${_BRANCH_NAME},_COMMIT_SHA=${_COMMIT_SHA}
