@@ -21,7 +21,7 @@
   padding: 0 calc(2 * var(--unit));
   border-radius: var(--roundedFull);
   background: var(--surfaceLight);
-  font-size: var(--fontSizeSmall);
+  font-size: var(--fontSizeSm);
   font-weight: 500;
   gap: calc(0.5 * var(--unit));
 }
@@ -34,12 +34,12 @@
   padding: 0 calc(2 * var(--unit));
   border-radius: var(--roundedFull);
   background: var(--surfaceLight);
-  font-size: var(--fontSizeSmall);
+  font-size: var(--fontSizeSm);
   font-weight: 500;
   gap: calc(0.5 * var(--unit));
 
   .label {
-    color: var(--textDark);
+    color: var(--textSecondary);
   }
 
   .movement {

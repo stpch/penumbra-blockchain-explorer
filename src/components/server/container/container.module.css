@@ -1,6 +1,7 @@
 .root {
-  min-width: 1024px;
-  max-width: 1600px;
+  width: 100%;
+  min-width: var(--pageMinWidth);
+  max-width: var(--pageMaxWidth);
   padding-right: calc(4 * var(--unit));
   padding-left: calc(4 * var(--unit));
   margin-right: auto;

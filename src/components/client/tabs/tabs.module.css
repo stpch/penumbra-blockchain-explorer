@@ -22,8 +22,8 @@
   );
   background-position-y: var(--height);
   background-repeat: no-repeat;
-  color: var(--textDark);
-  font-size: var(--fontSizeSmall);
+  color: var(--textSecondary);
+  font-size: var(--fontSizeSm);
   font-weight: 500;
   text-decoration: none;
   transition:

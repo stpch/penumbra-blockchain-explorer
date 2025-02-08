@@ -1,5 +1,6 @@
 .body {
   display: flex;
+  min-width: var(--pageMinWidth);
   flex-direction: column;
   gap: calc(8 * var(--unit));
 }

@@ -3,11 +3,13 @@
   --fontPrimary: Poppins;
   --fontSecondary: "Work Sans";
   --fontSizeBase: 1rem;
-  --fontSizeSmall: calc(1rem / 16 * 14);
+  --fontSizeXs: calc(1rem / 16 * 12);
+  --fontSizeSm: calc(1rem / 16 * 14);
+  --fontSize3Xl: calc(1rem / 16 * 30);
 
   /* Colors */
   --text: #fafafa;
-  --textDark: #a3a3a3;
+  --textSecondary: #a3a3a3;
   --background: #0d0d0d;
   --surface: rgba(250, 250, 250, 0.05);
   --surfaceLight: rgba(250, 250, 250, 0.1);
@@ -16,9 +18,14 @@
 
   /* Layout */
   --unit: 8px;
+  --pageMinWidth: 1200px;
+  --pageMaxWidth: 1600px;
   --rounded: 16px;
   --roundedSmall: 8px;
   --roundedFull: 9999px;
+
+  /* Effects */
+  --blurXl: 64px;
 
   /* Animation */
   --fastOutSlowIn: cubic-bezier(0.4, 0, 0.2, 1);
