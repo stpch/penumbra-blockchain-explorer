@@ -14,6 +14,14 @@ const eslintConfig = [
     extends: ['next/core-web-vitals', 'next/typescript', 'plugin:prettier/recommended'],
     plugins: ['simple-import-sort'],
     rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          varsIgnorePattern: '^_',
+          argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
       'import/no-anonymous-default-export': 'off',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [

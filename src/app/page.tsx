@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const HomePage: FC = () => {
+const HomePage: FC = async () => {
   return null;
 };
 

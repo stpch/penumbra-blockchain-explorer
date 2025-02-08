@@ -1,15 +1,19 @@
 :root {
-  /* Theme */
-  --textColor: #fafafa;
-  --textColorDark: #a3a3a3;
+  /* Typography */
+  --primary-font-family: Poppins;
+  --secondary-font-family: "Work Sans";
+
+  /* Colors */
+  --text-color: #fafafa;
+  --text-color-dark: #a3a3a3;
   --background-color: #0d0d0d;
   --surface: rgba(250, 250, 250, 0.05);
-  --primaryColor: #ba4d14;
+  --primary-color: #ba4d14;
 
   /* Layout */
-  --spacing: 8px;
+  --unit: 8px;
 
   /* Animation */
-  --fastOutSlowIn: cubic-bezier(0.4, 0, 0.2, 1);
-  --easeInOut: cubic-bezier(0.4, 0, 0.6, 1);
+  --fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.6, 1);
 }

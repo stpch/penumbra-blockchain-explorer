@@ -4,10 +4,10 @@
   display: flex;
   height: var(--height);
   align-items: center;
-  padding: 0 calc(2 * var(--spacing));
+  padding: 0 calc(2 * var(--unit));
   border-radius: calc(var(--height) / 2);
   background: var(--surface);
-  gap: calc(2 * var(--spacing));
+  gap: calc(2 * var(--unit));
 }
 
 .tab {
@@ -22,11 +22,11 @@
   );
   background-position-y: var(--height);
   background-repeat: no-repeat;
-  color: var(--textColorDark);
+  color: var(--text-color-dark);
   text-decoration: none;
   transition:
-    color 200ms var(--fastOutSlowIn),
-    background-position 200ms var(--fastOutSlowIn);
+    color 200ms var(--fast-out-slow-in),
+    background-position 200ms var(--fast-out-slow-in);
 
   &::before {
     position: absolute;
@@ -34,17 +34,17 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--primaryColor);
+    background: var(--primary-color);
     content: "";
     transform: translateX(0);
     transition:
-      width 200ms var(--fastOutSlowIn),
-      transform 200ms var(--fastOutSlowIn);
+      width 200ms var(--fast-out-slow-in),
+      transform 200ms var(--fast-out-slow-in);
   }
 
   &.active {
     background-position-y: 0;
-    color: var(--textColor);
+    color: var(--text-color);
 
     &::before {
       width: 100%;

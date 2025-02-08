@@ -19,6 +19,8 @@ body {
   background-position: center 85%;
   background-repeat: no-repeat;
   background-size: 75%;
-  color: var(--textColor);
-  font: 1rem/1.25 sans-serif;
+  color: var(--text-color);
+  font-family: var(--secondary-font-family), sans-serif;
+  font-size: calc(1rem / 18 * 16);
+  line-height: 1.5;
 }
