@@ -82,7 +82,7 @@ jobs:
 
       - name: Get Cloud Build status
         run: |
-          STATUS=$(gcloud builds describe $BUILD_ID --format="value(status)")
+          STATUS=$(gcloud builds describe steps.cloudbuild.outputs.build_id --format="value(status)")
           echo "::set-output name=status::$STATUS"
 
       - name: Check Cloud Build status
