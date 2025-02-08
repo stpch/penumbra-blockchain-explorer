@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -22,7 +22,6 @@ jobs:
         run: npm ci
 
       - name: Build application
-        # run: npx --no-install next build
         run: npm run build
 
       - name: Check types
@@ -60,7 +59,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Authenticate with Google Cloud
+      - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
@@ -70,29 +69,7 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      - name: Configure gcloud
+      - name: Deploy to Google Cloud
         run: |
           gcloud config set compute/region ${{ secrets.GCP_REGION }}
-
-      - name: Trigger Cloud Build
-        run: |
-          RESPONSE=$(gcloud builds submit --config cloudbuild.yaml --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }},_REGION=${{ secrets.GCP_REGION }} --async --format="json")
-          BUILD_ID=$(echo "$RESPONSE" | jq -r '.name' | cut -d'/' -f2)
-          echo "BUILD_ID=$BUILD_ID" >> $GITHUB_ENV
-
-      - name: Monitor Cloud Build status
-        run: |
-          STATUS="WORKING"
-
-          while [[ "$STATUS" == "WORKING" || "$STATUS" == "QUEUED" ]]; do
-            sleep 10
-            STATUS=$(gcloud builds describe $BUILD_ID --format="value(status)")
-            echo "Current build status: $STATUS"
-          done
-
-          if [[ "$STATUS" != "SUCCESS" ]]; then
-            echo "Cloud Build failed with status: $STATUS"
-            exit 1
-          fi
-
-          echo "Cloud Build completed successfully."
+          gcloud builds submit --config cloudbuild.yaml --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }},_REGION=${{ secrets.GCP_REGION }}
