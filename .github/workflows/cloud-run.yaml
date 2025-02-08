@@ -77,7 +77,7 @@ jobs:
       - name: Trigger Cloud Build
         run: |
           RESPONSE=$(gcloud builds submit --config cloudbuild.yaml --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }},_REGION=${{ secrets.GCP_REGION }} --async --format="json")
-          BUILD_ID=$(echo "$RESPONSE" | jq -r '.metadata.build.id')
+          BUILD_ID=$(echo "$RESPONSE" | jq -r '.name' | cut -d'/' -f2)
           echo "BUILD_ID=$BUILD_ID" >> $GITHUB_ENV
 
       - name: Monitor Cloud Build status
