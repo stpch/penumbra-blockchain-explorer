@@ -1,0 +1,4 @@
+.root {
+  display: flex;
+  gap: calc(2 * var(--unit));
+}

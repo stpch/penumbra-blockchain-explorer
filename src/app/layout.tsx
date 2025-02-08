@@ -5,6 +5,7 @@ import { FC, ReactNode } from 'react';
 import background from '../../public/background.svg';
 import { NavigationBar } from '../components/server';
 import { rootTitle } from '../lib/constants';
+import styles from './layout.module.css';
 
 // @ts-expect-error: Font loaders must be called and assigned to a const in the module scope
 const _poppins = Poppins({
@@ -41,7 +42,7 @@ interface Props {
 const RootLayout: FC<Props> = async props => {
   return (
     <html lang='en'>
-      <body style={{ backgroundImage: `url(${background.src})` }}>
+      <body style={{ backgroundImage: `url(${background.src})` }} className={styles.body}>
         <NavigationBar />
         {props.children}
       </body>

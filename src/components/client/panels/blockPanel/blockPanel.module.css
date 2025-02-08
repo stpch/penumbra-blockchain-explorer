@@ -1,0 +1,6 @@
+.root {
+  display: block;
+  padding: calc(3 * var(--unit));
+  border-radius: var(--rounded);
+  background-color: var(--surface);
+}
