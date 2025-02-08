@@ -78,12 +78,12 @@ jobs:
         id: cloudbuild
         run: |
           BUILD_ID=$(gcloud builds submit --config cloudbuild.yaml --no-source --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }} --print-revision | jq -r '.id')
-          echo "::set-output name=build_id::$BUILD_ID"
+          echo "BUILD_ID=$BUILD_ID" >> $GITHUB_ENV
 
       - name: Get Cloud Build status
         run: |
           STATUS=$(gcloud builds describe steps.cloudbuild.outputs.build_id --format="value(status)")
-          echo "::set-output name=status::$STATUS"
+          echo "STATUS=$STATUS" >> $GITHUB_ENV
 
       - name: Check Cloud Build status
         if: steps.cloudbuild.outputs.status!= 'SUCCESS'
