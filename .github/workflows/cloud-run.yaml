@@ -1,0 +1,91 @@
+name: Deploy Next.js application to Google Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        # run: npx --no-install next build
+        run: npm run build
+
+      - name: Check types
+        run: npm run typecheck
+
+      - name: Lint JavaScript
+        run: npm run lint
+
+      - name: Lint CSS
+        run: npm run stylelint
+
+      # - name: Run tests with coverage
+      #   run: npm run test:coverage
+
+      # - name: Upload coverage report
+      #   uses: codecov/codecov-action@v5
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Cache .next directory
+        uses: actions/cache@v4
+        with:
+          path: .next
+          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+              ${{ runner.os }}-next-
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Configure gcloud
+        run: |
+          gcloud config set compute/region ${{ secrets.GCP_REGION }}
+
+      - name: Trigger Cloud Build
+        id: cloudbuild
+        run: |
+          BUILD_ID=$(gcloud builds submit --config cloudbuild.yaml --no-source --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }} --print-revision | jq -r '.id')
+          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+
+      - name: Get Cloud Build status
+        run: |
+          STATUS=$(gcloud builds describe $BUILD_ID --format="value(status)")
+          echo "build_status=$STATUS" >> $GITHUB_OUTPUT
+          echo "::set-output name=status::$STATUS"
+
+      - name: Check Cloud Build status
+        if: steps.cloudbuild.outputs.status!= 'SUCCESS'
+        run: |
+          echo "Cloud Build failed. Check the logs: https://console.cloud.google.com/cloud-build/builds/$BUILD_ID?project=${{ secrets.GCP_PROJECT_ID }}"
+          exit 1
+
+      - name: Cloud Build Success
+        if: steps.cloudbuild.outputs.status == 'SUCCESS'
+        run: echo "Cloud Build completed successfully!""
