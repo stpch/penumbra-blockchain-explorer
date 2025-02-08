@@ -80,17 +80,19 @@ jobs:
           BUILD_ID=$(gcloud builds submit --config cloudbuild.yaml --substitutions=_BRANCH_NAME=${{ github.ref_name }},_COMMIT_SHA=${{ github.sha }},_REGION=${{ secrets.GCP_REGION }} --format="json" | jq -r '.id')
           echo "BUILD_ID=$BUILD_ID" >> $GITHUB_ENV
 
-      - name: Get Cloud Build status
+      - name: Monitor Cloud Build status
         run: |
-          STATUS=$(gcloud builds describe steps.cloudbuild.outputs.build_id --format="value(status)")
-          echo "STATUS=$STATUS" >> $GITHUB_ENV
+          STATUS="WORKING"
 
-      - name: Check Cloud Build status
-        if: steps.cloudbuild.outputs.status!= 'SUCCESS'
-        run: |
-          echo "Cloud Build failed. Check the logs: https://console.cloud.google.com/cloud-build/builds/$BUILD_ID?project=${{ secrets.GCP_PROJECT_ID }}"
-          exit 1
+          while [[ "$STATUS" == "WORKING" || "$STATUS" == "QUEUED" ]]; do
+            sleep 10
+            STATUS=$(gcloud builds describe steps.cloudbuild.outputs.build_id --format="value(status)")
+            echo "Current build status: $STATUS"
+          done
 
-      - name: Cloud Build Success
-        if: steps.cloudbuild.outputs.status == 'SUCCESS'
-        run: echo "Cloud Build completed successfully!""
+          if [[ "$STATUS" != "SUCCESS" ]]; then
+            echo "Cloud Build failed with status: $STATUS"
+            exit 1
+          fi
+
+          echo "Cloud Build completed successfully."
