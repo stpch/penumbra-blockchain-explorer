@@ -8,10 +8,6 @@ interface Props {
   }>;
 }
 
-export const generateStaticParams = () => {
-  return [{ transactionId: '123456789' }];
-};
-
 export const generateMetadata = async (props: Props): Promise<Metadata> => ({
   title: `Transaction ${(await props.params).transactionId} - ${rootTitle}`,
 });

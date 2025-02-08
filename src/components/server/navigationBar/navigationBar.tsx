@@ -1,8 +1,7 @@
-/* istanbul ignore file */
 import clsx from 'clsx';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
-import { Tab, Tabs } from '../tabs';
+import { Tab, Tabs } from '../../client';
 import styles from './navigationBar.module.css';
 
 interface Props {
