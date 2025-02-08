@@ -1,5 +1,13 @@
 .root {
   display: grid;
   gap: calc(2 * var(--unit));
-  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  grid-template: auto auto / repeat(6, 1fr);
+
+  & > :nth-child(-n + 3) {
+    grid-column: span 2;
+  }
+
+  & > :nth-child(n + 4) {
+    grid-column: span 3;
+  }
 }
