@@ -28,6 +28,29 @@
 
 .table {
   flex: 1;
+  border-collapse: collapse;
+
+  tr:not(:last-child) {
+    th,
+    td {
+      border-bottom: 1px solid var(--separator);
+    }
+  }
+
+  th,
+  td {
+    height: calc(6 * var(--unit));
+    padding: 0 calc(1.5 * var(--unit));
+    font-size: var(--fontSizeSm);
+    font-weight: 500;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    color: var(--textSecondary);
+    text-transform: capitalize;
+  }
 }
 
 .footer {
