@@ -15,13 +15,34 @@
 
 .dropdown {
   display: flex;
-  width: 110px;
   height: calc(5.5 * var(--unit));
   align-items: center;
   justify-content: center;
+  padding: 0 calc(2 * var(--unit));
   border-radius: var(--roundedFull);
   background: var(--surfaceLight);
   font-size: var(--fontSizeSmall);
   font-weight: 500;
   gap: calc(0.5 * var(--unit));
+}
+
+.price {
+  display: flex;
+  height: calc(6 * var(--unit));
+  align-items: center;
+  justify-content: center;
+  padding: 0 calc(2 * var(--unit));
+  border-radius: var(--roundedFull);
+  background: var(--surfaceLight);
+  font-size: var(--fontSizeSmall);
+  font-weight: 500;
+  gap: calc(0.5 * var(--unit));
+
+  .label {
+    color: var(--textDark);
+  }
+
+  .movement {
+    color: var(--successLight);
+  }
 }

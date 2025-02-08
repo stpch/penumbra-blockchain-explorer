@@ -20,7 +20,13 @@ const NavigationBar: FC<Props> = props => (
       <Tab href='/blocks' label='Blocks' />
       <Tab href='/transactions' label='Transactions' />
     </Tabs>
-    <div className={styles.group}>TODO: Search and price</div>
+    <div className={styles.group}>
+      <div className={styles.price}>
+        <span className={styles.label}>UM Price:</span>
+        <span>$0.98</span>
+        <span className={styles.movement}>(+1.1%)</span>
+      </div>
+    </div>
   </header>
 );
 
