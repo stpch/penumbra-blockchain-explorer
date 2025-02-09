@@ -72,12 +72,9 @@
     }
   }
 
-  tr:hover {
-    th,
-    td {
-      background: var(--actionHover);
-      cursor: pointer;
-    }
+  tr:hover td {
+    background: var(--actionHover);
+    cursor: pointer;
   }
 }
 
