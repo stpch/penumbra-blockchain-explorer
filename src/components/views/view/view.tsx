@@ -11,8 +11,9 @@ interface Props {
 
 const View: FC<Props> = props => (
   <article className={clsx(styles.root, props.className)}>
-    <header>
-      <h4>{props.title}</h4>
+    <header className={styles.header}>
+      <h4 className={styles.title}>{props.title}</h4>
+      <div>{props.subtitle}</div>
     </header>
     {props.children}
   </article>
