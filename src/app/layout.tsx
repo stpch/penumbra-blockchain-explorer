@@ -53,9 +53,9 @@ const RootLayout: FC<Props> = async props => {
   return (
     <html lang='en'>
       <body className={styles.body}>
-        <div className={styles.background} style={{ backgroundImage: `url(${background.src})` }} />
         <NavigationBar />
         {props.children}
+        <div className={styles.background} style={{ backgroundImage: `url(${background.src})` }} />
       </body>
     </html>
   );
