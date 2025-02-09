@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import {
   BlockPanel,
+  BlockTable,
   BurnPanel,
+  Button,
   Container,
-  LatestBlocksTable,
   LatestTransactionsTable,
   TransactionPanel,
 } from '../components';
@@ -25,7 +26,11 @@ const HomePage: FC = async () => {
         <BlockPanel />
         <TransactionPanel />
         <BurnPanel />
-        <LatestBlocksTable blocks={latestBlocks} />
+        <BlockTable
+          blocks={latestBlocks}
+          title='Latest blocks'
+          actions={<Button href='/blocks'>View all</Button>}
+        />
         <LatestTransactionsTable transactions={latestTransactions} />
       </div>
     </Container>

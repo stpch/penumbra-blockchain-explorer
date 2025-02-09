@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
-import { BlocksTable, Breadcrumb, Breadcrumbs, Container } from '../../components';
+import { BlockTable, Breadcrumb, Breadcrumbs, Container } from '../../components';
 import { rootTitle } from '../../lib/constants';
 import { blocks } from '../../lib/mocks';
 
-const page = 0;
-const itemsPerPage = 20;
-const start = page * itemsPerPage;
-const items = blocks.slice(start, start + itemsPerPage);
+const pagindatedBlocks = blocks.slice(0, 20);
 
 export const metadata: Metadata = {
   title: `Blocks - ${rootTitle}`,
@@ -19,7 +16,7 @@ const BlocksPage: FC = async () => (
       <Breadcrumb href='/'>Explorer</Breadcrumb>
       <Breadcrumb>Blocks</Breadcrumb>
     </Breadcrumbs>
-    <BlocksTable items={items} itemsPerPage={itemsPerPage} totalItems={blocks.length} page={page} />
+    <BlockTable blocks={pagindatedBlocks} proposer />
   </Container>
 );
 

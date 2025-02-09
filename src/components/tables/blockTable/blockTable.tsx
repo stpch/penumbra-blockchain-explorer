@@ -1,18 +1,20 @@
 'use client';
 
-import { Box } from 'lucide-react';
+import { Box, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { FC, MouseEvent, useCallback } from 'react';
+import { FC, MouseEvent, ReactNode, useCallback } from 'react';
 import { Block } from '../../../lib/types';
-import Button from '../../button';
 import Table from '../table';
 
 interface Props {
   blocks: Block[];
   className?: string;
+  title?: string;
+  actions?: ReactNode;
+  proposer?: boolean;
 }
 
-const LatestBlocksTable: FC<Props> = props => {
+const BlockTable: FC<Props> = props => {
   const router = useRouter();
 
   const onRowClick = useCallback(
@@ -23,16 +25,12 @@ const LatestBlocksTable: FC<Props> = props => {
   );
 
   return (
-    <Table
-      title='Latest blocks'
-      actions={<Button href='/blocks'>View all</Button>}
-      alignLastRight
-      className={props.className}
-    >
+    <Table className={props.className} alignLastRight title={props.title} actions={props.actions}>
       <thead>
         <tr>
           <th>Block height</th>
           <th>Time</th>
+          {props.proposer && <th>Proposer</th>}
           <th>Txs</th>
         </tr>
       </thead>
@@ -44,6 +42,12 @@ const LatestBlocksTable: FC<Props> = props => {
               <span>{block.height}</span>
             </td>
             <td>{block.date.toISOString()}</td>
+            {props.proposer && (
+              <td>
+                <span>{block.id}</span>
+                <Copy size={14} color='var(--textSecondary)' />
+              </td>
+            )}
             <td>{block.transactions}</td>
           </tr>
         ))}
@@ -52,4 +56,4 @@ const LatestBlocksTable: FC<Props> = props => {
   );
 };
 
-export default LatestBlocksTable;
+export default BlockTable;
