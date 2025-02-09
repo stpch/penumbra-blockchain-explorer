@@ -2,5 +2,4 @@
 export { default as Container } from './container';
 export { default as Dashboard } from './dashboard';
 export { default as NavigationBar } from './navigationBar';
-export { default as Pill } from './pill';
-export { default as Table } from './table';
+export * from './tables';
