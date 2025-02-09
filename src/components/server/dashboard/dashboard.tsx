@@ -4,6 +4,7 @@ import { FC, ReactNode } from 'react';
 import { blocks, transactions } from '../../../lib/mocks';
 import { shortenHash } from '../../../lib/utils';
 import { BlockPanel, BurnPanel, Button, TransactionPanel } from '../../client';
+import Pill from '../pill';
 import Table from '../table';
 import styles from './dashboard.module.css';
 
@@ -65,7 +66,9 @@ const Dashboard: FC<Props> = props => (
               <Box size={16} color='var(--textSecondary)' />
               <span>{transaction.blockHeight}</span>
             </td>
-            <td>Actions</td>
+            <td>
+              <Pill>withdraw from a dutch auction and be careful</Pill>
+            </td>
           </tr>
         ))}
       </tbody>
