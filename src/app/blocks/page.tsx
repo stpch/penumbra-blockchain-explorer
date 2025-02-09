@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
-import { BlocksTable, Container } from '../../components';
+import { BlocksTable, Breadcrumb, Breadcrumbs, Container } from '../../components';
 import { rootTitle } from '../../lib/constants';
 import { blocks } from '../../lib/mocks';
 
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
 
 const BlocksPage: FC = async () => (
   <Container>
+    <Breadcrumbs>
+      <Breadcrumb href='/'>Explorer</Breadcrumb>
+      <Breadcrumb>Blocks</Breadcrumb>
+    </Breadcrumbs>
     <BlocksTable items={items} itemsPerPage={itemsPerPage} totalItems={blocks.length} page={page} />
   </Container>
 );

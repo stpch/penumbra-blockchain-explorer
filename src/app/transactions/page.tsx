@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
-import { Container, TransactionsTable } from '../../components';
+import { Breadcrumb, Breadcrumbs, Container, TransactionsTable } from '../../components';
 import { rootTitle } from '../../lib/constants';
 import { blocks, transactions } from '../../lib/mocks';
 
@@ -15,6 +15,10 @@ export const metadata: Metadata = {
 
 const TransactionsPage: FC = async () => (
   <Container>
+    <Breadcrumbs>
+      <Breadcrumb href='/'>Explorer</Breadcrumb>
+      <Breadcrumb>Transactions</Breadcrumb>
+    </Breadcrumbs>
     <TransactionsTable
       items={items}
       itemsPerPage={itemsPerPage}
