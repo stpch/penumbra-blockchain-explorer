@@ -51,6 +51,10 @@
     color: var(--textSecondary);
     text-transform: capitalize;
   }
+
+  td {
+    font-family: var(--fontMono);
+  }
 }
 
 .footer {

@@ -20,7 +20,7 @@ body {
   background-repeat: no-repeat;
   background-size: 75%;
   color: var(--text);
-  font-family: var(--fontPrimary), sans-serif;
+  font-family: var(--fontPrimary);
   font-size: var(--fontSizeBase);
   line-height: 1.5;
 }
