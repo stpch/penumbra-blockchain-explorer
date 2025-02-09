@@ -1,10 +1,9 @@
 import clsx from 'clsx';
 import { Box, CheckCheck, Copy } from 'lucide-react';
-import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { blocks, transactions } from '../../../lib/mocks';
 import { shortenHash } from '../../../lib/utils';
-import { BlockPanel, BurnPanel, TransactionPanel } from '../../client';
+import { BlockPanel, BurnPanel, Button, TransactionPanel } from '../../client';
 import Table from '../table';
 import styles from './dashboard.module.css';
 
@@ -25,7 +24,7 @@ const Dashboard: FC<Props> = props => (
     <BlockPanel />
     <TransactionPanel />
     <BurnPanel />
-    <Table title='Latest blocks' actions={<Link href='/blocks'>View all</Link>} alignLastRight>
+    <Table title='Latest blocks' actions={<Button href='/blocks'>View all</Button>} alignLastRight>
       <thead>
         <tr>
           <th>Block height</th>
@@ -46,7 +45,7 @@ const Dashboard: FC<Props> = props => (
         ))}
       </tbody>
     </Table>
-    <Table title='Latest transactions' actions={<Link href='/transactions'>View all</Link>}>
+    <Table title='Latest transactions' actions={<Button href='/transactions'>View all</Button>}>
       <thead>
         <tr>
           <th>Tx hash</th>
