@@ -30,6 +30,7 @@
   flex: 1;
   border-collapse: collapse;
 
+  thead tr,
   tr:not(:last-child) {
     th,
     td {
