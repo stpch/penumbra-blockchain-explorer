@@ -13,12 +13,8 @@ import {
 import View from '../../../components/views/view';
 import { rootTitle } from '../../../lib/constants';
 import { blocks, transactions } from '../../../lib/mocks';
-import { shortenHash } from '../../../lib/utils';
 
-const latestTransactions = transactions.slice(0, 10).map(transaction => ({
-  ...transaction,
-  hash: shortenHash(transaction.hash),
-}));
+const latestTransactions = transactions.slice(0, 10);
 
 interface Props {
   params: Promise<{
