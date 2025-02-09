@@ -8,6 +8,7 @@ interface Props {
   title?: string;
   actions?: ReactNode;
   footer?: ReactNode;
+  alignLastRight?: boolean;
 }
 
 const Table: FC<Props> = props => (
@@ -18,7 +19,9 @@ const Table: FC<Props> = props => (
         <div className={styles.actions}>{props.actions}</div>
       </header>
     )}
-    <table className={styles.table}>{props.children}</table>
+    <table className={clsx(styles.table, props.alignLastRight && styles.alignLastRight)}>
+      {props.children}
+    </table>
     {props.footer && <footer className={styles.footer}>{props.footer}</footer>}
   </section>
 );

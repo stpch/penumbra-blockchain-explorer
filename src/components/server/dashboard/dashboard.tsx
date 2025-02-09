@@ -25,7 +25,7 @@ const Dashboard: FC<Props> = props => (
     <BlockPanel />
     <TransactionPanel />
     <BurnPanel />
-    <Table title='Latest blocks' actions={<Link href='/blocks'>View all</Link>}>
+    <Table title='Latest blocks' actions={<Link href='/blocks'>View all</Link>} alignLastRight>
       <thead>
         <tr>
           <th>Block height</th>
