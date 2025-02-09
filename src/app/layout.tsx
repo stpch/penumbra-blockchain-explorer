@@ -25,7 +25,7 @@ const _fontSecondary = Work_Sans({
 });
 
 // @ts-expect-error: Font loaders must be called and assigned to a const in the module scope
-const Iosevka = localFont({
+const _fontMono = localFont({
   src: '../lib/fonts/iosevka-medium.woff2',
   declarations: [{ prop: 'fontFamily', value: 'Foo' }],
   weight: '500',

@@ -2,7 +2,7 @@
   /* Typography */
   --fontPrimary: Poppins, sans-serif;
   --fontSecondary: "Work Sans", sans-serif;
-  --fontMono: Iosevka, monospace;
+  --fontMono: _fontMono, monospace;
   --fontSizeBase: 1rem;
   --fontSizeXs: calc(1rem / 16 * 12);
   --fontSizeSm: calc(1rem / 16 * 14);
