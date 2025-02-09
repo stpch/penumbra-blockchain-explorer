@@ -13,7 +13,7 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => ({
   title: `Transaction ${(await props.params).transactionId} - ${rootTitle}`,
 });
 
-const TransactionDetailsPage: FC = async () => (
+const TransactionViewPage: FC = async () => (
   <Container>
     <Breadcrumbs>
       <Breadcrumb href='/'>Explorer</Breadcrumb>
@@ -22,4 +22,4 @@ const TransactionDetailsPage: FC = async () => (
   </Container>
 );
 
-export default TransactionDetailsPage;
+export default TransactionViewPage;

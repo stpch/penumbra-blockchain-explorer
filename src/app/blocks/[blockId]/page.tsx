@@ -13,7 +13,7 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => ({
   title: `Block ${(await props.params).blockId} - ${rootTitle}`,
 });
 
-const BlockDetailsPage: FC<Props> = async () => (
+const BlockViewPage: FC<Props> = async () => (
   <Container>
     <Breadcrumbs>
       <Breadcrumb href='/'>Explorer</Breadcrumb>
@@ -22,4 +22,4 @@ const BlockDetailsPage: FC<Props> = async () => (
   </Container>
 );
 
-export default BlockDetailsPage;
+export default BlockViewPage;
