@@ -2,25 +2,24 @@
 
 import { Box, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { FC, MouseEvent, useCallback, useMemo } from 'react';
+import { FC, MouseEvent, useCallback } from 'react';
 import { Block } from '../../../lib/types';
 import Table from '../table';
 
-const itemsPerPage = 20;
-
 interface Props {
-  blocks: Block[];
+  items: Block[];
+  totalItems: number;
+  itemsPerPage: number;
+  page: number;
   className?: string;
 }
 
 const BlocksTable: FC<Props> = props => {
   const router = useRouter();
 
-  const paginatedBlocks = useMemo(() => props.blocks.slice(0, itemsPerPage), [props.blocks]);
-
   const onRowClick = useCallback(
     (e: MouseEvent<HTMLTableRowElement>) => {
-      router.push(`/blocks/${e.currentTarget.dataset.blockId}`);
+      router.push(`/blocks/${e.currentTarget.dataset.itemId}`);
     },
     [router],
   );
@@ -36,8 +35,8 @@ const BlocksTable: FC<Props> = props => {
         </tr>
       </thead>
       <tbody>
-        {paginatedBlocks.map(block => (
-          <tr key={block.id} data-block-id={block.id} onClick={onRowClick}>
+        {props.items.map(block => (
+          <tr key={block.id} data-item-id={block.id} onClick={onRowClick}>
             <td>
               <Box size={16} color='var(--textSecondary)' />
               <span>{block.height}</span>

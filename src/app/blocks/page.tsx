@@ -4,6 +4,11 @@ import { BlocksTable, Container } from '../../components';
 import { rootTitle } from '../../lib/constants';
 import { blocks } from '../../lib/mocks';
 
+const page = 0;
+const itemsPerPage = 20;
+const start = page * itemsPerPage;
+const paginatedBlocks = blocks.slice(start, start + itemsPerPage);
+
 export const metadata: Metadata = {
   title: `Blocks - ${rootTitle}`,
 };
@@ -11,7 +16,12 @@ export const metadata: Metadata = {
 const BlocksPage: FC = async () => {
   return (
     <Container>
-      <BlocksTable blocks={blocks} />
+      <BlocksTable
+        items={paginatedBlocks}
+        itemsPerPage={itemsPerPage}
+        totalItems={blocks.length}
+        page={page}
+      />
     </Container>
   );
 };
