@@ -1,9 +1,12 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
+import { blocks } from '../../../lib/mocks';
 import { BlockPanel, BurnPanel, TransactionPanel } from '../../client';
 import Table from '../table';
 import styles from './dashboard.module.css';
+
+const latestBlocks = blocks.slice(0, 10);
 
 interface Props {
   children?: ReactNode;
@@ -24,56 +27,13 @@ const Dashboard: FC<Props> = props => (
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1,057,456</td>
-          <td>1s ago</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>3s ago</td>
-          <td>10</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>10min ago</td>
-          <td>12</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>12min ago</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>3h ago</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>3hr ago</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>5hr ago</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>12hr ago</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>1d ago</td>
-          <td>3</td>
-        </tr>
-        <tr>
-          <td>1,057,456</td>
-          <td>1wk ago</td>
-          <td>15</td>
-        </tr>
+        {latestBlocks.map(block => (
+          <tr key={block.id}>
+            <td>{block.height}</td>
+            <td>{block.date.toLocaleTimeString()}</td>
+            <td>{block.transactions}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
     <Table title='Latest transactions' actions={<Link href='/transactions'>View all</Link>}>
