@@ -1,4 +1,6 @@
 .root {
+  --panelGradientStartColor: rgba(174, 174, 174, 0.25);
+  --panelGradientStopColor: rgba(174, 174, 174, 0.025);
   display: grid;
   height: 196px;
   padding: calc(3 * var(--unit));
@@ -11,8 +13,6 @@
     var(--panelGradientStopColor) 100%
   );
   grid-template: 1fr 1fr / 1fr 1fr;
-  --panelGradientStartColor: rgba(193, 166, 204, 0.25);
-  --panelGradientStopColor: rgba(193, 166, 204, 0.025);
 }
 
 .header {

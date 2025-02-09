@@ -1,3 +1,4 @@
 .root {
-  display: inherit;
+  --panelGradientStartColor: rgba(193, 166, 204, 0.25);
+  --panelGradientStopColor: rgba(193, 166, 204, 0.025);
 }
