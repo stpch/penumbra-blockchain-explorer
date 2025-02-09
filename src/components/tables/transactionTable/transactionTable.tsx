@@ -2,19 +2,21 @@
 
 import { Box, CheckCheck, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { FC, MouseEvent, useCallback } from 'react';
+import { FC, MouseEvent, ReactNode, useCallback } from 'react';
 import { Transaction } from '../../../lib/types';
-import Button from '../../button';
 import Pill from '../../pill';
 import Table from '../table';
-import styles from './latestTransactionsTable.module.css';
+import styles from './transactionTable.module.css';
 
 interface Props {
+  title?: string;
+  actions?: ReactNode;
   transactions: Transaction[];
   className?: string;
+  time?: boolean;
 }
 
-const LatestTransactionsTable: FC<Props> = props => {
+const TransactionTable: FC<Props> = props => {
   const router = useRouter();
 
   const onRowClick = useCallback(
@@ -25,16 +27,13 @@ const LatestTransactionsTable: FC<Props> = props => {
   );
 
   return (
-    <Table
-      title='Latest transactions'
-      actions={<Button href='/transactions'>View all</Button>}
-      className={props.className}
-    >
+    <Table className={props.className} title={props.title} actions={props.actions}>
       <thead>
         <tr>
           <th>Tx hash</th>
           <th>Block height</th>
           <th>Actions</th>
+          {props.time && <th>Time</th>}
         </tr>
       </thead>
       <tbody>
@@ -55,6 +54,7 @@ const LatestTransactionsTable: FC<Props> = props => {
                 <span className={styles.moreActions}>+{transaction.totalActions - 1}</span>
               )}
             </td>
+            {props.time && <td>{transaction.date.toISOString()}</td>}
           </tr>
         ))}
       </tbody>
@@ -62,4 +62,4 @@ const LatestTransactionsTable: FC<Props> = props => {
   );
 };
 
-export default LatestTransactionsTable;
+export default TransactionTable;

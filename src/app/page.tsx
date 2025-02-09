@@ -5,8 +5,8 @@ import {
   BurnPanel,
   Button,
   Container,
-  LatestTransactionsTable,
   TransactionPanel,
+  TransactionTable,
 } from '../components';
 import { blocks, transactions } from '../lib/mocks';
 import { shortenHash } from '../lib/utils';
@@ -31,7 +31,11 @@ const HomePage: FC = async () => {
           title='Latest blocks'
           actions={<Button href='/blocks'>View all</Button>}
         />
-        <LatestTransactionsTable transactions={latestTransactions} />
+        <TransactionTable
+          transactions={latestTransactions}
+          title='Latest transactions'
+          actions={<Button href='/transactions'>View all</Button>}
+        />
       </div>
     </Container>
   );

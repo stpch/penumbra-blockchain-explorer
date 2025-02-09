@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
-import { Breadcrumb, Breadcrumbs, Container, TransactionsTable } from '../../components';
+import { Breadcrumb, Breadcrumbs, Container, TransactionTable } from '../../components';
 import { rootTitle } from '../../lib/constants';
-import { blocks, transactions } from '../../lib/mocks';
+import { transactions } from '../../lib/mocks';
 
-const page = 0;
-const itemsPerPage = 20;
-const start = page * itemsPerPage;
-const items = transactions.slice(start, start + itemsPerPage);
+const paginatedTransactions = transactions.slice(0, 20);
 
 export const metadata: Metadata = {
   title: `Transactions - ${rootTitle}`,
@@ -19,12 +16,7 @@ const TransactionsPage: FC = async () => (
       <Breadcrumb href='/'>Explorer</Breadcrumb>
       <Breadcrumb>Transactions</Breadcrumb>
     </Breadcrumbs>
-    <TransactionsTable
-      items={items}
-      itemsPerPage={itemsPerPage}
-      totalItems={blocks.length}
-      page={page}
-    />
+    <TransactionTable transactions={paginatedTransactions} time />
   </Container>
 );
 
