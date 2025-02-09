@@ -19,6 +19,7 @@
   --primary: #ba4d14;
   --secondaryLight: #53aea8;
   --successLight: #55d383;
+  --actionHover: rgba(83, 174, 168, 0.15);
 
   /* Layout */
   --unit: 8px;

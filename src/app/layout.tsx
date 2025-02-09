@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Poppins, Work_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import { FC, ReactNode } from 'react';
-import { NavigationBar } from '../components/server';
+import { NavigationBar } from '../components';
 import { rootTitle } from '../lib/constants';
 import background from '../lib/images/background.svg';
 import styles from './layout.module.css';

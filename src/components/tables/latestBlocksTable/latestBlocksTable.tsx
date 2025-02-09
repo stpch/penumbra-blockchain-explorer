@@ -1,7 +1,7 @@
 import { Box } from 'lucide-react';
 import { FC } from 'react';
-import { Block } from '../../../../lib/types';
-import { Button } from '../../../client';
+import { Block } from '../../../lib/types';
+import Button from '../../button';
 import Table from '../table';
 
 interface Props {

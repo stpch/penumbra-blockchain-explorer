@@ -1,6 +1,12 @@
 import { FC } from 'react';
-import { BlockPanel, BurnPanel, TransactionPanel } from '../components/client';
-import { Container, LatestBlocksTable, LatestTransactionsTable } from '../components/server';
+import {
+  BlockPanel,
+  BurnPanel,
+  Container,
+  LatestBlocksTable,
+  LatestTransactionsTable,
+  TransactionPanel,
+} from '../components';
 import { blocks, transactions } from '../lib/mocks';
 import { shortenHash } from '../lib/utils';
 import styles from './page.module.css';

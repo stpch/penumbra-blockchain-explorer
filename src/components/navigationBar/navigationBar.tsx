@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import { ChevronsUpDown } from 'lucide-react';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
-import logo from '../../../lib/images/logo.png';
-import { Tab, Tabs } from '../../client';
+import logo from '../../lib/images/logo.png';
+import { Tab, Tabs } from '../tabs';
 import styles from './navigationBar.module.css';
 
 interface Props {

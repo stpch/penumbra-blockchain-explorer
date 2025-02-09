@@ -71,6 +71,14 @@
       text-align: right;
     }
   }
+
+  tr:hover {
+    th,
+    td {
+      background: var(--actionHover);
+      cursor: pointer;
+    }
+  }
 }
 
 .footer {

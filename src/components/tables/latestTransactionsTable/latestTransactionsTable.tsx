@@ -1,7 +1,7 @@
 import { Box, CheckCheck, Copy } from 'lucide-react';
 import { FC } from 'react';
-import { Transaction } from '../../../../lib/types';
-import { Button } from '../../../client';
+import { Transaction } from '../../../lib/types';
+import Button from '../../button';
 import Pill from '../../pill';
 import Table from '../table';
 import styles from './latestTransactionsTable.module.css';
