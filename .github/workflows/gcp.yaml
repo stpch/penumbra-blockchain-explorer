@@ -54,13 +54,13 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
 
-      - name: Cache .next directory
-        uses: actions/cache@v4
-        with:
-          path: .next
-          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-              ${{ runner.os }}-next-
+#      - name: Cache .next directory
+#        uses: actions/cache@v4
+#        with:
+#          path: .next
+#          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}
+#          restore-keys: |
+#              ${{ runner.os }}-next-
 
       - if: failure()
         uses: chrnorm/deployment-status@v2
