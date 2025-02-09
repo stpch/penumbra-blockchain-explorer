@@ -4,3 +4,10 @@ export interface Block {
   date: Date;
   transactions: number;
 }
+
+export interface Transaction {
+  id: string;
+  hash: string;
+  blockHeight: number;
+  date: Date;
+}
