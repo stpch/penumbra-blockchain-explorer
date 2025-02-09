@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import { Poppins, Work_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import { FC, ReactNode } from 'react';
-import background from '../../public/background.svg';
 import { NavigationBar } from '../components/server';
 import { rootTitle } from '../lib/constants';
+import background from '../lib/images/background.svg';
 import styles from './layout.module.css';
 
 // @ts-expect-error: Font loaders must be called and assigned to a const in the module scope

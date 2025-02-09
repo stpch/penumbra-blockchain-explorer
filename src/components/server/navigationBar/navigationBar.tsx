@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { ChevronsUpDown } from 'lucide-react';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
+import logo from '../../../lib/images/logo.png';
 import { Tab, Tabs } from '../../client';
 import styles from './navigationBar.module.css';
 
@@ -13,7 +14,7 @@ interface Props {
 const NavigationBar: FC<Props> = props => (
   <header className={clsx(styles.root, props.className)}>
     <div className={styles.group}>
-      <Image src='/logo.png' alt='Noctis' width={120} height={33} />
+      <Image src={logo.src} alt='Noctis' width={120} height={33} />
       <div className={styles.dropdown}>
         <span>Marinnet</span>
         <ChevronsUpDown size={16} />
