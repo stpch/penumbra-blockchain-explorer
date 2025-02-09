@@ -1,4 +1,4 @@
-.root {
+.dashboard {
   display: grid;
   gap: calc(2 * var(--unit));
   grid-template: auto auto / repeat(6, 1fr);
