@@ -5,15 +5,21 @@ import { Block, Transaction } from './types';
 export const blocks: Block[] = Array.from({ length: 100 })
   .map(() => ({
     id: uuidv4(),
+    // id: 'foo',
     height: faker.number.int({ min: 1000000, max: 9999999 }),
     date: faker.date.recent(),
     transactions: faker.number.int({ min: 0, max: 30 }),
+    proposer:
+      'penumbravalid' +
+      faker.finance.bitcoinAddress({ type: 'bech32', network: 'testnet' }).slice(0, 7) +
+      '...',
   }))
   .toSorted((a, b) => b.date.getTime() - a.date.getTime());
 
 export const transactions: Transaction[] = Array.from({ length: 100 })
   .map(() => ({
     id: uuidv4(),
+    // id: 'foo',
     hash: faker.finance.bitcoinAddress({ type: 'bech32', network: 'testnet' }),
     blockHeight: faker.number.int({ min: 1000000, max: 9999999 }),
     date: faker.date.recent(),

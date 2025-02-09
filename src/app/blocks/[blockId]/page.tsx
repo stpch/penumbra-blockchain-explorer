@@ -1,3 +1,4 @@
+import { Copy } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { FC } from 'react';
@@ -47,7 +48,10 @@ const BlockViewPage: FC<Props> = async props => {
         <DataList>
           <DataListItem name='Block height'>{block.height}</DataListItem>
           <DataListItem name='Time'>{block.date.toISOString()}</DataListItem>
-          <DataListItem name='Proposer'>Foo</DataListItem>
+          <DataListItem name='Proposer'>
+            {block.proposer}
+            <Copy size={14} color='var(--textSecondary)' />
+          </DataListItem>
           <DataListItem name='Txs'>{block.transactions}</DataListItem>
         </DataList>
         <TransactionTable transactions={latestTransactions} />

@@ -50,7 +50,7 @@ const BlockTable: FC<Props> = props => {
             <td>{block.date.toISOString()}</td>
             {props.proposer && (
               <td>
-                <span>{block.id}</span>
+                <span>{block.proposer}</span>
                 <Copy size={14} color='var(--textSecondary)' />
               </td>
             )}

@@ -3,6 +3,7 @@ export interface Block {
   height: number;
   date: Date;
   transactions: number;
+  proposer: string;
 }
 
 export interface Transaction {
