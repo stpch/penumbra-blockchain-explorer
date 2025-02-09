@@ -42,7 +42,8 @@ interface Props {
 const RootLayout: FC<Props> = async props => {
   return (
     <html lang='en'>
-      <body style={{ backgroundImage: `url(${background.src})` }} className={styles.body}>
+      <body className={styles.body}>
+        <div className={styles.background} style={{ backgroundImage: `url(${background.src})` }} />
         <NavigationBar />
         {props.children}
       </body>
