@@ -10,4 +10,6 @@ export interface Transaction {
   hash: string;
   blockHeight: number;
   date: Date;
+  latestAction: string;
+  totalActions: number;
 }

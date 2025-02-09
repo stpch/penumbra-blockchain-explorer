@@ -4,6 +4,7 @@ import { Transaction } from '../../../../lib/types';
 import { Button } from '../../../client';
 import Pill from '../../pill';
 import Table from '../table';
+import styles from './latestTransactionsTable.module.css';
 
 interface Props {
   transactions: Transaction[];
@@ -36,7 +37,10 @@ const LatestTransactionsTable: FC<Props> = props => (
             <span>{transaction.blockHeight}</span>
           </td>
           <td>
-            <Pill>withdraw from a dutch auction and be careful</Pill>
+            <Pill>{transaction.latestAction}</Pill>
+            {transaction.totalActions > 1 && (
+              <span className={styles.moreActions}>+{transaction.totalActions - 1}</span>
+            )}
           </td>
         </tr>
       ))}
