@@ -21,11 +21,18 @@
 }
 
 .title {
+  display: flex;
+  align-items: center;
   margin: 0;
   color: var(--textSecondary);
   font-size: var(--fontSizeBase);
   font-weight: 500;
+  gap: var(--unit);
   text-transform: capitalize;
+
+  & > * {
+    white-space: nowrap;
+  }
 }
 
 .number {

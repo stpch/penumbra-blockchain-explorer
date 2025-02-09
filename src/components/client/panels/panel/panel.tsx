@@ -7,7 +7,7 @@ import styles from './panel.module.css';
 export interface Props {
   className?: ReactNode;
   children?: ReactNode;
-  title: string;
+  title: ReactNode;
   number: number;
   footer?: ReactNode;
 }

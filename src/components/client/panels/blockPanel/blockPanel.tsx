@@ -1,9 +1,11 @@
 'use client';
 
 import clsx from 'clsx';
+import Image from 'next/image';
 import { FC, ReactNode } from 'react';
 import Panel from '../panel';
 import styles from './blockPanel.module.css';
+import icon from './blockPanelIcon.svg';
 
 export interface Props {
   className?: ReactNode;
@@ -12,7 +14,12 @@ export interface Props {
 const BlockPanel: FC<Props> = props => (
   <Panel
     className={clsx(styles.root, props.className)}
-    title='Current block'
+    title={
+      <>
+        <Image src={icon.src} alt='Current block' width={icon.width} height={icon.height} />
+        <span>Current block</span>
+      </>
+    }
     number={3538663}
     footer='Block time ~12s'
   >
