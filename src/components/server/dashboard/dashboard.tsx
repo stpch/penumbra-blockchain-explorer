@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Box, CheckCheck, Copy } from 'lucide-react';
 import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { blocks, transactions } from '../../../lib/mocks';
@@ -35,7 +36,10 @@ const Dashboard: FC<Props> = props => (
       <tbody>
         {latestBlocks.map(block => (
           <tr key={block.id}>
-            <td>{block.height}</td>
+            <td>
+              <Box size={16} color='var(--textSecondary)' />
+              <span>{block.height}</span>
+            </td>
             <td>{block.date.toLocaleTimeString()}</td>
             <td>{block.transactions}</td>
           </tr>
@@ -53,8 +57,15 @@ const Dashboard: FC<Props> = props => (
       <tbody>
         {latestTransactions.map(transaction => (
           <tr key={transaction.id}>
-            <td>{transaction.hash}</td>
-            <td>{transaction.blockHeight}</td>
+            <td>
+              <CheckCheck size={14} color='var(--secondaryLight)' />
+              <span>{transaction.hash}</span>
+              <Copy size={14} color='var(--textSecondary)' />
+            </td>
+            <td>
+              <Box size={16} color='var(--textSecondary)' />
+              <span>{transaction.blockHeight}</span>
+            </td>
             <td>Actions</td>
           </tr>
         ))}

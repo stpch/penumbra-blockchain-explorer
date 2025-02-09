@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { ChevronsUpDown } from 'lucide-react';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
 import { Tab, Tabs } from '../../client';
@@ -13,7 +14,10 @@ const NavigationBar: FC<Props> = props => (
   <header className={clsx(styles.root, props.className)}>
     <div className={styles.group}>
       <Image src='/logo.png' alt='Noctis' width={120} height={33} />
-      <div className={styles.dropdown}>Marinnet</div>
+      <div className={styles.dropdown}>
+        <span>Marinnet</span>
+        <ChevronsUpDown size={16} />
+      </div>
     </div>
     <Tabs>
       <Tab href='/' label='Home' />

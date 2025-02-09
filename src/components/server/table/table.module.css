@@ -45,6 +45,14 @@
     font-weight: 500;
     text-align: left;
     vertical-align: middle;
+
+    > * {
+      vertical-align: middle;
+
+      &:not(:last-child) {
+        margin-right: var(--unit);
+      }
+    }
   }
 
   th {
