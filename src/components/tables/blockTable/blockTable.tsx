@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
 import { Block } from '../../../lib/types';
 import Table from '../table';
+import styles from './blockTable.module.css';
 
 interface Props {
   blocks: Block[];
@@ -36,7 +37,12 @@ const BlockTable: FC<Props> = props => {
       </thead>
       <tbody>
         {props.blocks.map(block => (
-          <tr key={block.id} data-block-id={block.id} onClick={onRowClick}>
+          <tr
+            key={block.id}
+            data-block-id={block.id}
+            onClick={onRowClick}
+            className={styles.dataRow}
+          >
             <td>
               <Box size={16} color='var(--textSecondary)' />
               <span>{block.height}</span>

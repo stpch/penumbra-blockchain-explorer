@@ -1,0 +1,4 @@
+.dataRow:hover {
+  background: rgba(83, 174, 168, 0.15);
+  cursor: pointer;
+}

@@ -1,3 +1,8 @@
+.dataRow:hover {
+  background: rgba(193, 166, 204, 0.15);
+  cursor: pointer;
+}
+
 .moreActions {
   color: var(--textSecondary);
 }

@@ -38,7 +38,12 @@ const TransactionTable: FC<Props> = props => {
       </thead>
       <tbody>
         {props.transactions.map(transaction => (
-          <tr key={transaction.id} data-transaction-id={transaction.id} onClick={onRowClick}>
+          <tr
+            key={transaction.id}
+            data-transaction-id={transaction.id}
+            onClick={onRowClick}
+            className={styles.dataRow}
+          >
             <td>
               <CheckCheck size={14} color='var(--secondaryLight)' />
               <span>{transaction.hash}</span>
