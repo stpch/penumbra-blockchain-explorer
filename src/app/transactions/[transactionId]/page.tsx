@@ -24,7 +24,7 @@ const TransactionViewPage: FC<Props> = async props => {
   }
 
   return (
-    <Container>
+    <Container narrow>
       <Breadcrumbs>
         <Breadcrumb href='/'>Explorer</Breadcrumb>
         <Breadcrumb href='/transactions'>Transactions</Breadcrumb>

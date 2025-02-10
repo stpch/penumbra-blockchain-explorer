@@ -6,4 +6,9 @@
   padding-left: calc(4 * var(--unit));
   margin-right: auto;
   margin-left: auto;
+
+  &.narrow {
+    min-width: var(--pageNarrowWidth);
+    max-width: var(--pageNarrowWidth);
+  }
 }

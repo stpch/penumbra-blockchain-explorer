@@ -24,6 +24,7 @@
   --unit: 8px;
   --pageMinWidth: 1200px;
   --pageMaxWidth: 1600px;
+  --pageNarrowWidth: 752px;
   --rounded: 16px;
   --roundedSmall: 8px;
   --roundedFull: 9999px;

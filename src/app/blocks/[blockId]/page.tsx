@@ -26,7 +26,7 @@ const BlockViewPage: FC<Props> = async props => {
   }
 
   return (
-    <Container>
+    <Container narrow>
       <Breadcrumbs>
         <Breadcrumb href='/'>Explorer</Breadcrumb>
         <Breadcrumb href='/blocks'>Blocks</Breadcrumb>
