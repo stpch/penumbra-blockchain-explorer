@@ -29,7 +29,7 @@ const TransactionTable: FC<Props> = props => {
     [router],
   );
 
-  const now = dayjs();
+  const now = dayjs().tz(timezone);
 
   return (
     <Table className={props.className} title={props.title} actions={props.actions}>
@@ -64,7 +64,7 @@ const TransactionTable: FC<Props> = props => {
                 <span className={styles.moreActions}>+{transaction.totalActions - 1}</span>
               )}
             </td>
-            {props.time && <td>{now.tz(timezone).to(transaction.date)}</td>}
+            {props.time && <td>{now.to(dayjs(transaction.date).tz(timezone))}</td>}
           </tr>
         ))}
       </tbody>

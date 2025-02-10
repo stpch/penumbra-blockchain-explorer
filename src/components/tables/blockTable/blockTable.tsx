@@ -28,7 +28,7 @@ const BlockTable: FC<Props> = props => {
     [router],
   );
 
-  const now = dayjs();
+  const now = dayjs().tz(timezone);
 
   return (
     <Table className={props.className} alignLastRight title={props.title} actions={props.actions}>
@@ -52,7 +52,7 @@ const BlockTable: FC<Props> = props => {
               <Box size={16} color='var(--textSecondary)' />
               <span>{formatNumber(block.height)}</span>
             </td>
-            <td>{now.tz(timezone, true).to(block.date)}</td>
+            <td>{now.to(dayjs(block.date).tz(timezone))}</td>
             {props.proposer && (
               <td>
                 <span>{block.proposer}</span>
