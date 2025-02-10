@@ -1,2 +1,3 @@
 /* istanbul ignore file */
-export { default } from './view';
+export type { Props as ViewProps } from './view';
+export { default as View } from './view';

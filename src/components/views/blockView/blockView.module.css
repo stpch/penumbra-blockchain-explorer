@@ -1,0 +1,4 @@
+.root {
+  --panelGradientStartColor: rgba(83, 174, 168, 0.25);
+  --panelGradientStopColor: rgba(83, 174, 168, 0.025);
+}

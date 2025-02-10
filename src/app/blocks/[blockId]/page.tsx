@@ -1,16 +1,7 @@
-import { Copy } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { FC } from 'react';
-import {
-  Breadcrumb,
-  Breadcrumbs,
-  Container,
-  DataList,
-  DataListItem,
-  TransactionTable,
-} from '../../../components';
-import View from '../../../components/views/view';
+import { BlockView, Breadcrumb, Breadcrumbs, Container } from '../../../components';
 import { rootTitle } from '../../../lib/constants';
 import { blocks, transactions } from '../../../lib/mocks';
 
@@ -40,18 +31,12 @@ const BlockViewPage: FC<Props> = async props => {
         <Breadcrumb href='/'>Explorer</Breadcrumb>
         <Breadcrumb href='/blocks'>Blocks</Breadcrumb>
       </Breadcrumbs>
-      <View title='Block view' subtitle='1,057,456'>
-        <DataList>
-          <DataListItem name='Block height'>{block.height}</DataListItem>
-          <DataListItem name='Time'>{block.date.toISOString()}</DataListItem>
-          <DataListItem name='Proposer'>
-            {block.proposer}
-            <Copy size={14} color='var(--textSecondary)' />
-          </DataListItem>
-          <DataListItem name='Txs'>{block.transactions}</DataListItem>
-        </DataList>
-        <TransactionTable transactions={latestTransactions} />
-      </View>
+      <BlockView
+        title='Block view'
+        subtitle='1,057,456'
+        block={block}
+        transactions={latestTransactions}
+      />
     </Container>
   );
 };

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { FC, ReactNode } from 'react';
 import styles from './view.module.css';
 
-interface Props {
+export interface Props {
   title: string;
   subtitle: string;
   children?: ReactNode;
