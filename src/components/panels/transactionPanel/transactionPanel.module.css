@@ -24,10 +24,27 @@
 .bar {
   width: 6px;
   border-radius: var(--roundedFull);
-  background: var(--surfaceLight);
+  transform: scaleX(0);
+  transform-origin: bottom;
 
-  &.full {
+  &.top {
+    animation: barAnimation 250ms 250ms linear forwards;
+    background: var(--surfaceLight);
+  }
+
+  &.bottom {
+    animation: barAnimation 250ms linear forwards;
     background: var(--primary);
+  }
+}
+
+@keyframes barAnimation {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
   }
 }
 
