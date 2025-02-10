@@ -52,7 +52,7 @@ const BlockTable: FC<Props> = props => {
               <Box size={16} color='var(--textSecondary)' />
               <span>{formatNumber(block.height)}</span>
             </td>
-            <td>{now.to(dayjs(block.date).tz(timezone))}</td>
+            <td>{now.to(dayjs(block.date))}</td>
             {props.proposer && (
               <td>
                 <span>{block.proposer}</span>

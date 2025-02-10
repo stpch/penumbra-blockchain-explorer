@@ -64,7 +64,7 @@ const TransactionTable: FC<Props> = props => {
                 <span className={styles.moreActions}>+{transaction.totalActions - 1}</span>
               )}
             </td>
-            {props.time && <td>{now.to(dayjs(transaction.date).tz(timezone))}</td>}
+            {props.time && <td>{now.to(dayjs(transaction.date))}</td>}
           </tr>
         ))}
       </tbody>
