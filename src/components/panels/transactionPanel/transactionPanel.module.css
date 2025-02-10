@@ -28,12 +28,12 @@
   transform-origin: bottom;
 
   &.top {
-    animation: barAnimation 250ms 250ms linear forwards;
+    animation: barAnimation 500ms 500ms linear forwards;
     background: var(--surfaceLight);
   }
 
   &.bottom {
-    animation: barAnimation 250ms linear forwards;
+    animation: barAnimation 500ms linear forwards;
     background: var(--primary);
   }
 }

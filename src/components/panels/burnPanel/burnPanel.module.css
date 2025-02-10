@@ -25,7 +25,7 @@
     width: 8px;
     height: 8px;
     border-radius: var(--roundedFull);
-    animation: dotAnimation 250ms 250ms linear forwards;
+    animation: dotAnimation 500ms 500ms linear forwards;
     content: "";
     transform: scale(0);
     transform-origin: center;
