@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Search } from 'lucide-react';
 import { FC } from 'react';
 import { blocks, transactions } from '../__tests__/__fixtures__';

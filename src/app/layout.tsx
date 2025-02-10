@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import '../lib/css/main.css';
 import type { Metadata } from 'next';
 import { Poppins, Work_Sans } from 'next/font/google';

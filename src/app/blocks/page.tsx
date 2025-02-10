@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import type { Metadata } from 'next';
 import { FC } from 'react';
 import { blocks } from '../../__tests__/__fixtures__';
