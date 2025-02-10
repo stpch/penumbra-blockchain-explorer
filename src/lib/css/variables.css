@@ -8,6 +8,7 @@
   --fontSizeSm: calc(1rem / 16 * 14);
   --fontSize2Xl: calc(1rem / 16 * 24);
   --fontSize3Xl: calc(1rem / 16 * 30);
+  --fontSize4Xl: calc(1rem / 16 * 36);
 
   /* Colors */
   --text: #fafafa;

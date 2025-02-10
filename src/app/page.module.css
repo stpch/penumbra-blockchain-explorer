@@ -1,3 +1,10 @@
+.title {
+  margin: 0;
+  font-family: var(--fontSecondary);
+  font-size: var(--fontSize4Xl);
+  font-weight: 500;
+}
+
 .dashboard {
   display: grid;
   gap: calc(2 * var(--unit));
