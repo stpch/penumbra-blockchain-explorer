@@ -1,16 +1,20 @@
 .root {
-  display: flex;
+  display: grid;
   height: calc(11 * var(--unit));
   align-items: center;
-  justify-content: space-between;
   padding-right: calc(4 * var(--unit));
   padding-left: calc(4 * var(--unit));
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .group {
   display: flex;
   align-items: center;
   gap: calc(2 * var(--unit));
+
+  &:last-child {
+    justify-self: flex-end;
+  }
 }
 
 .dropdown {
@@ -24,6 +28,10 @@
   font-size: var(--fontSizeSm);
   font-weight: 500;
   gap: calc(0.5 * var(--unit));
+}
+
+.tabs {
+  justify-self: center;
 }
 
 .search,

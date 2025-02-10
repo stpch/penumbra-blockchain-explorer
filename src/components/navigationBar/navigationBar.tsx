@@ -20,7 +20,7 @@ const NavigationBar: FC<Props> = props => (
         <ChevronsUpDown size={16} />
       </div>
     </div>
-    <Tabs>
+    <Tabs className={styles.tabs}>
       <Tab href='/' label='Home' />
       <Tab href='/blocks' label='Blocks' />
       <Tab href='/transactions' label='Transactions' />
