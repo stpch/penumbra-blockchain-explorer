@@ -1,13 +1,12 @@
 import clsx from 'clsx';
 import { ChevronsUpDown, Search } from 'lucide-react';
 import Image from 'next/image';
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import logo from '../../lib/images/logo.png';
 import { Tab, Tabs } from '../tabs';
 import styles from './navigationBar.module.css';
 
 interface Props {
-  children?: ReactNode;
   className?: string;
 }
 

@@ -24,6 +24,7 @@ const eslintConfig = [
         },
       ],
       'import/no-anonymous-default-export': 'off',
+      'react/display-name': 'off',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': [
         'error',
