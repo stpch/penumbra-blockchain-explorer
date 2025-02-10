@@ -64,8 +64,8 @@ TypeScript is linted and autoformatted with ESLint and Prettier mimicking the co
 
 ## Testing
 
-Jest tests are collocated with the components. Global test configuration and npm module mocks reside
-in `src/__tests__`. Test coverage can be reported to console and written to file with
+Jest tests are collocated with the components. Global test configuration and mocks reside in
+`src/__tests__`. Test coverage can be reported to console and written to file with
 `npm run test:coverage`.
 
 ## CI/CD
