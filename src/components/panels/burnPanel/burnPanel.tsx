@@ -27,7 +27,7 @@ const BurnPanel: FC<Props> = props => (
       <div className={styles.bar} style={{ marginTop: 29, height: 20 }} />
       <div className={styles.bar} style={{ marginTop: 29, height: 19 }} />
       <div className={styles.bar} style={{ marginTop: 22, height: 32 }} />
-      <div className={styles.bar} style={{ marginTop: 29, height: 12 }} />
+      <div className={styles.bar} style={{ marginTop: 12, height: 29 }} />
       <div className={styles.bar} style={{ marginTop: 28, height: 26 }} />
       <div className={styles.bar} style={{ marginTop: 12, height: 50 }} />
       <div className={styles.bar} style={{ marginTop: 4, height: 58 }} />

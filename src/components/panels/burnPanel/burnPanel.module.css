@@ -14,7 +14,10 @@
   position: relative;
   width: 8px;
   border-radius: var(--roundedFull);
+  animation: barAnimation 500ms linear forwards;
   background: var(--surfaceLight);
+  transform: scaleX(0);
+  transform-origin: center;
 
   &::before,
   &::after {
@@ -22,7 +25,10 @@
     width: 8px;
     height: 8px;
     border-radius: var(--roundedFull);
+    animation: dotAnimation 250ms 250ms linear forwards;
     content: "";
+    transform: scale(0);
+    transform-origin: center;
   }
 
   &::before {
@@ -32,6 +38,26 @@
   &::after {
     bottom: 0;
     background: var(--secondaryLight);
+  }
+}
+
+@keyframes barAnimation {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes dotAnimation {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
 
