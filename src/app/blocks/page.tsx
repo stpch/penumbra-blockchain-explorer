@@ -20,4 +20,5 @@ const BlocksPage: FC = async () => (
   </Container>
 );
 
+export const revalidate = 1;
 export default BlocksPage;

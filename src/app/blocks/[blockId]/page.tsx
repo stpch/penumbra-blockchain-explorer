@@ -41,4 +41,5 @@ const BlockViewPage: FC<Props> = async props => {
   );
 };
 
+export const revalidate = 1;
 export default BlockViewPage;

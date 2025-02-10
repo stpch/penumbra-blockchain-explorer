@@ -20,4 +20,5 @@ const TransactionsPage: FC = async () => (
   </Container>
 );
 
+export const revalidate = 1;
 export default TransactionsPage;
