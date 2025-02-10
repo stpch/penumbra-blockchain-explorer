@@ -3,6 +3,7 @@
 import { Box, CheckCheck, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
+import { timezone } from '../../../lib/constants';
 import dayjs from '../../../lib/dayjs';
 import { Transaction } from '../../../lib/types';
 import { formatNumber, shortenHash } from '../../../lib/utils';
@@ -63,7 +64,7 @@ const TransactionTable: FC<Props> = props => {
                 <span className={styles.moreActions}>+{transaction.totalActions - 1}</span>
               )}
             </td>
-            {props.time && <td>{now.to(transaction.date)}</td>}
+            {props.time && <td>{now.tz(timezone).to(transaction.date)}</td>}
           </tr>
         ))}
       </tbody>

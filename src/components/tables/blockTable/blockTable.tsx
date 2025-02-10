@@ -3,6 +3,7 @@
 import { Box, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
+import { timezone } from '../../../lib/constants';
 import dayjs from '../../../lib/dayjs';
 import { Block } from '../../../lib/types';
 import { formatNumber } from '../../../lib/utils';
@@ -51,7 +52,7 @@ const BlockTable: FC<Props> = props => {
               <Box size={16} color='var(--textSecondary)' />
               <span>{formatNumber(block.height)}</span>
             </td>
-            <td>{now.to(block.date)}</td>
+            <td>{now.tz(timezone, true).to(block.date)}</td>
             {props.proposer && (
               <td>
                 <span>{block.proposer}</span>
