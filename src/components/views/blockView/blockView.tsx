@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { Copy } from 'lucide-react';
 import { FC } from 'react';
 import { Block, Transaction } from '../../../lib/types';
+import { formatNumber } from '../../../lib/utils';
 import { DataList, DataListItem } from '../../dataList';
 import { TransactionTable } from '../../tables';
 import { View, ViewProps } from '../view';
@@ -15,7 +16,7 @@ interface Props extends Omit<ViewProps, 'children'> {
 const BlockView: FC<Props> = props => (
   <View
     title={props.title}
-    subtitle={props.subtitle}
+    subtitle={formatNumber(props.block.height)}
     className={clsx(styles.root, props.className)}
   >
     <DataList>

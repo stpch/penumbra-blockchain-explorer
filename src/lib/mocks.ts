@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 // import { v4 as uuidv4 } from 'uuid';
 import { Block, Transaction } from './types';
-import { shortenHash } from './utils';
 
 export const blocks: Block[] = Array.from({ length: 100 })
   .map(() => ({
@@ -22,7 +21,7 @@ export const transactions: Transaction[] = Array.from({ length: 100 })
     return {
       // id: uuidv4(),
       id: 'foo',
-      hash: shortenHash(faker.finance.bitcoinAddress({ type: 'bech32', network: 'testnet' })),
+      hash: faker.finance.bitcoinAddress({ type: 'bech32', network: 'testnet' }),
       blockHeight: faker.number.int({ min: 1000000, max: 9999999 }),
       date: faker.date.recent(),
       latestAction: faker.helpers.arrayElement([

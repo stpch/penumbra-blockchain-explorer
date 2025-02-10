@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { Copy } from 'lucide-react';
 import { FC } from 'react';
 import { Transaction } from '../../../lib/types';
+import { shortenHash } from '../../../lib/utils';
 import { DataList, DataListItem } from '../../dataList';
 import { View, ViewProps } from '../view';
 import styles from './transactionView.module.css';
@@ -18,7 +19,7 @@ const TransactionView: FC<Props> = props => (
   >
     <DataList>
       <DataListItem name='Transaction hash'>
-        {props.transaction.hash}
+        {shortenHash(props.transaction.hash)}
         <Copy size={14} color='var(--textSecondary)' />
       </DataListItem>
       <DataListItem name='Block height'>{props.transaction.blockHeight}</DataListItem>

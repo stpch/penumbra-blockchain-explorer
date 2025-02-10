@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
 import dayjs from '../../../lib/dayjs';
 import { Transaction } from '../../../lib/types';
+import { formatNumber, shortenHash } from '../../../lib/utils';
 import Pill from '../../pill';
 import Table from '../table';
 import styles from './transactionTable.module.css';
@@ -49,12 +50,12 @@ const TransactionTable: FC<Props> = props => {
           >
             <td>
               <CheckCheck size={14} color='var(--secondaryLight)' />
-              <span>{transaction.hash}</span>
+              <span>{shortenHash(transaction.hash)}</span>
               <Copy size={14} color='var(--textSecondary)' />
             </td>
             <td>
               <Box size={16} color='var(--textSecondary)' />
-              <span>{transaction.blockHeight}</span>
+              <span>{formatNumber(transaction.blockHeight)}</span>
             </td>
             <td>
               <Pill>{transaction.latestAction}</Pill>

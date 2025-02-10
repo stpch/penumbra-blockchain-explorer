@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
 import dayjs from '../../../lib/dayjs';
 import { Block } from '../../../lib/types';
+import { formatNumber } from '../../../lib/utils';
 import Table from '../table';
 import styles from './blockTable.module.css';
 
@@ -48,7 +49,7 @@ const BlockTable: FC<Props> = props => {
           >
             <td>
               <Box size={16} color='var(--textSecondary)' />
-              <span>{block.height}</span>
+              <span>{formatNumber(block.height)}</span>
             </td>
             <td>{now.to(block.date)}</td>
             {props.proposer && (

@@ -32,7 +32,7 @@ const TransactionViewPage: FC<Props> = async props => {
       <TransactionView
         transaction={transaction}
         title='Transaction view'
-        subtitle={transaction.id}
+        subtitle={transaction.hash}
       />
     </Container>
   );
