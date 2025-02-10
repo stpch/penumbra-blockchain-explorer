@@ -10,6 +10,9 @@ PK Labs frontend developer onboarding task.
 2. Install dependencies with  `npm install`.
 3. Start the app with `npm run dev`.
 
+Or check out the deployed version at
+<https://penumbra-blockchain-explorer-426149560589.europe-west6.run.app/>.
+
 ### npm scripts
 
 | Script                      | Description                                   |
