@@ -12,7 +12,7 @@ export interface Props {
 const View: FC<Props> = props => (
   <article className={clsx(styles.root, props.className)}>
     <header className={styles.header}>
-      <h4 className={styles.title}>{props.title}</h4>
+      <h2 className={styles.title}>{props.title}</h2>
       <div className={styles.subtitle}>{props.subtitle}</div>
     </header>
     {props.children}
