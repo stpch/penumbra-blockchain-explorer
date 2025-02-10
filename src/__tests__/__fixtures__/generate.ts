@@ -10,7 +10,7 @@ const blocks = Array.from({ length: 100 })
   .toSorted((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
 let filename = path.join(__dirname, 'blocks.json');
-fs.writeFileSync(filename, JSON.stringify(blocks, null, 4));
+fs.writeFileSync(filename, JSON.stringify(blocks, null, 2));
 console.log(filename);
 
 const transactions = Array.from({ length: 100 })
@@ -18,5 +18,5 @@ const transactions = Array.from({ length: 100 })
   .toSorted((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
 filename = path.join(__dirname, 'transactions.json');
-fs.writeFileSync(path.join(__dirname, 'transactions.json'), JSON.stringify(transactions, null, 4));
+fs.writeFileSync(path.join(__dirname, 'transactions.json'), JSON.stringify(transactions, null, 2));
 console.log(filename);
