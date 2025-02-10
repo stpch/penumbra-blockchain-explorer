@@ -15,20 +15,20 @@ Or check out the deployed version at
 
 ### npm scripts
 
-| Script                      | Description                                   |
-|-----------------------------|-----------------------------------------------|
-| `npm run dev`               | Run app in development environment.           |
-| `npm test`                  | Run tests.                                    |
+| Script                      | Description                                  |
+|-----------------------------|----------------------------------------------|
+| `npm run dev`               | Run app in development environment.          |
+| `npm test`                  | Run tests.                                   |
 | `npm run test:coverage`     | Run with coverage report to console and file. |
-| `npm run test:codegen`      | Generate block and transaction fixtures.      |
-| `npm run test:watch`        | Run tests in watch mode.                      |
-| `npm run lint`              | Lint JavaScript with ESLint.                  |
-| `npm run lint:fix`          | Lint and fix JavaScript with ESLint.          |
-| `npm run stylelint`         | Lint CSS with Stylelint.                      |
-| `npm run stylelint:fix`     | Fix and fix CSS with Stylelint.               |
-| `npm run typecheck`         | Check TypeScript code.                        |
-| `npm run build`             | Build app for deployment.                     |
-| `npm start`                 | Runn app in deployment environment.           |
+| `npm run test:codegen`      | Generate block and transaction fixtures.     |
+| `npm run test:watch`        | Run tests in watch mode.                     |
+| `npm run lint`              | Lint JavaScript with ESLint.                 |
+| `npm run lint:fix`          | Lint and fix JavaScript with ESLint.         |
+| `npm run stylelint`         | Lint CSS with Stylelint.                     |
+| `npm run stylelint:fix`     | Fix and fix CSS with Stylelint.              |
+| `npm run typecheck`         | Check TypeScript code.                       |
+| `npm run build`             | Build app for deployment.                    |
+| `npm start`                 | Run app in deployment environment.           |
 
 ### Project structure
 
