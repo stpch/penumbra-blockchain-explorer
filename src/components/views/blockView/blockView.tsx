@@ -21,7 +21,7 @@ const BlockView: FC<Props> = props => (
   >
     <DataList>
       <DataListItem name='Block height'>{props.block.height}</DataListItem>
-      <DataListItem name='Time'>{props.block.date.toISOString()}</DataListItem>
+      <DataListItem name='Time'>{props.block.date}</DataListItem>
       <DataListItem name='Proposer'>
         {props.block.proposer}
         <Copy size={14} color='var(--textSecondary)' />

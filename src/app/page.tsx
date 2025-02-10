@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react';
 import { FC } from 'react';
+import { blocks, transactions } from '../__tests__/__fixtures__';
 import {
   BlockPanel,
   BlockTable,
@@ -9,7 +10,6 @@ import {
   TransactionPanel,
   TransactionTable,
 } from '../components';
-import { blocks, transactions } from '../lib/mocks';
 import styles from './page.module.css';
 
 const latestBlocks = blocks.slice(0, 10);

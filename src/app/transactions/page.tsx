@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
+import { transactions } from '../../__tests__/__fixtures__';
 import { Breadcrumb, Breadcrumbs, Container, TransactionTable } from '../../components';
 import { rootTitle } from '../../lib/constants';
-import { transactions } from '../../lib/mocks';
 
 const paginatedTransactions = transactions.slice(0, 20);
 

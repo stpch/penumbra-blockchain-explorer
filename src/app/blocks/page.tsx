@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { FC } from 'react';
+import { blocks } from '../../__tests__/__fixtures__';
 import { BlockTable, Breadcrumb, Breadcrumbs, Container } from '../../components';
 import { rootTitle } from '../../lib/constants';
-import { blocks } from '../../lib/mocks';
 
 const paginatedBlocks = blocks.slice(0, 20);
 

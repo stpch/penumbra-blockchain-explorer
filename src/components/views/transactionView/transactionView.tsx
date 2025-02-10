@@ -23,7 +23,7 @@ const TransactionView: FC<Props> = props => (
         <Copy size={14} color='var(--textSecondary)' />
       </DataListItem>
       <DataListItem name='Block height'>{props.transaction.blockHeight}</DataListItem>
-      <DataListItem name='Time'>{props.transaction.date.toISOString()}</DataListItem>
+      <DataListItem name='Time'>{props.transaction.date}</DataListItem>
     </DataList>
   </View>
 );

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { FC } from 'react';
+import { transactions } from '../../../__tests__/__fixtures__';
 import { Breadcrumb, Breadcrumbs, Container, TransactionView } from '../../../components';
 import { rootTitle } from '../../../lib/constants';
-import { transactions } from '../../../lib/mocks';
 
 interface Props {
   params: Promise<{

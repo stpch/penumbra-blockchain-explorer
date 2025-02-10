@@ -1,5 +1,5 @@
 export interface Block {
-  date: Date;
+  date: string;
   height: number;
   id: string;
   proposer: string;
@@ -8,7 +8,7 @@ export interface Block {
 
 export interface Transaction {
   blockHeight: number;
-  date: Date;
+  date: string;
   hash: string;
   id: string;
   latestAction: string;

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { FC } from 'react';
+import { blocks, transactions } from '../../../__tests__/__fixtures__';
 import { BlockView, Breadcrumb, Breadcrumbs, Container } from '../../../components';
 import { rootTitle } from '../../../lib/constants';
-import { blocks, transactions } from '../../../lib/mocks';
 
 const latestTransactions = transactions.slice(0, 10);
 
