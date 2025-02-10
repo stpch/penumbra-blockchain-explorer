@@ -7,6 +7,11 @@ describe('Container', () => {
     getByText(container, 'Foo');
   });
 
+  test('supports narrow layout', async () => {
+    const { container } = render(<Container narrow>Foo</Container>);
+    expect(getByText(container, 'Foo').classList.contains('narrow')).toBe(true);
+  });
+
   test('applies custom classes', async () => {
     const { container } = render(<Container className='foo bar' />);
 
