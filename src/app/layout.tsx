@@ -51,16 +51,14 @@ interface Props {
   children: ReactNode;
 }
 
-const RootLayout: FC<Props> = async props => {
-  return (
-    <html lang='en'>
-      <body className={styles.body}>
-        <NavigationBar />
-        {props.children}
-        <div className={styles.background} style={{ backgroundImage: `url(${background.src})` }} />
-      </body>
-    </html>
-  );
-};
+const RootLayout: FC<Props> = async props => (
+  <html lang='en'>
+    <body className={styles.body}>
+      <NavigationBar />
+      {props.children}
+      <div className={styles.background} style={{ backgroundImage: `url(${background.src})` }} />
+    </body>
+  </html>
+);
 
 export default RootLayout;

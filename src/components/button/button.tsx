@@ -12,8 +12,8 @@ interface Props {
   light?: boolean;
 }
 
-const Button: FC<Props> = props => {
-  return props.href ? (
+const Button: FC<Props> = props =>
+  props.href ? (
     <Link
       href={props.href}
       className={clsx(styles.root, props.light && styles.light, props.className)}
@@ -28,6 +28,5 @@ const Button: FC<Props> = props => {
       {props.children}
     </button>
   );
-};
 
 export default Button;
