@@ -41,7 +41,7 @@ Or check out the deployed version at
 | `src/lib`                    | Logic, helpers, types, assets, etc. used across the app.              |
 | `public`                     | Static public assets accessible through the browser.                  |
 
-## Components, CSS and fonts
+## Components, CSS, icons and fonts
 
 The UI and theme replicate the provided [Figma mocks](https://bit.ly/3WRV2bK) as close as possible.
 All components are built from scratch as <https://github.com/penumbra-zone/web> and
@@ -51,6 +51,8 @@ The project uses CSS modules with the global CSS and theme at `src/lib/css`. It 
 variables, flex, grid, animations, etc. Most components can be overridden with `className`. PostCSS
 plugins add additional features such as normalizing and nesting. Tailwind was considered but
 ultimately I went for this approach as I haven't used Tailwind in a while.
+
+<https://lucide.dev/> is used for most icons. Some are custom and extracted from Figma.
 
 The `Poppins` and `Work Sans` fonts are loaded with `next/font/google` whereas `Iosevka` is built
 from source and loaded with `next/font/local` from `src/lib/fonts`.
