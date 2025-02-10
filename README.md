@@ -57,8 +57,8 @@ from source and loaded with `next/font/local` from `src/lib/fonts`.
 
 ## Linting
 
-TypeScript is linted and autoformatted with ESLint and Prettier. CSS is linted and autoformatted
-with  Stylelint.
+TypeScript is linted and autoformatted with ESLint and Prettier and mimicks the configuration
+at <https://github.com/penumbra-zone/web>. CSS is linted and autoformatted with Stylelint.
 
 ## Testing
 
