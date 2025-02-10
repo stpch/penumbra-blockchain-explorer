@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { FC } from 'react';
-import { Breadcrumb, Breadcrumbs, Container } from '../../../components';
+import { Breadcrumb, Breadcrumbs, Container, TransactionView } from '../../../components';
 import { rootTitle } from '../../../lib/constants';
+import { transactions } from '../../../lib/mocks';
 
 interface Props {
   params: Promise<{
@@ -13,13 +15,27 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => ({
   title: `Transaction ${(await props.params).transactionId} - ${rootTitle}`,
 });
 
-const TransactionViewPage: FC = async () => (
-  <Container>
-    <Breadcrumbs>
-      <Breadcrumb href='/'>Explorer</Breadcrumb>
-      <Breadcrumb href='/transactions'>Transactions</Breadcrumb>
-    </Breadcrumbs>
-  </Container>
-);
+const TransactionViewPage: FC<Props> = async props => {
+  const params = await props.params;
+  const transaction = transactions.find(t => t.id === params.transactionId);
+
+  if (!transaction) {
+    notFound();
+  }
+
+  return (
+    <Container>
+      <Breadcrumbs>
+        <Breadcrumb href='/'>Explorer</Breadcrumb>
+        <Breadcrumb href='/transactions'>Transactions</Breadcrumb>
+      </Breadcrumbs>
+      <TransactionView
+        transaction={transaction}
+        title='Transaction view'
+        subtitle={transaction.id}
+      />
+    </Container>
+  );
+};
 
 export default TransactionViewPage;
