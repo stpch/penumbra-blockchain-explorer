@@ -3,6 +3,7 @@
 import { Box, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
+import dayjs from '../../../lib/dayjs';
 import { Block } from '../../../lib/types';
 import Table from '../table';
 import styles from './blockTable.module.css';
@@ -24,6 +25,8 @@ const BlockTable: FC<Props> = props => {
     },
     [router],
   );
+
+  const now = dayjs();
 
   return (
     <Table className={props.className} alignLastRight title={props.title} actions={props.actions}>
@@ -47,7 +50,7 @@ const BlockTable: FC<Props> = props => {
               <Box size={16} color='var(--textSecondary)' />
               <span>{block.height}</span>
             </td>
-            <td>{block.date.toISOString()}</td>
+            <td>{now.to(block.date)}</td>
             {props.proposer && (
               <td>
                 <span>{block.proposer}</span>

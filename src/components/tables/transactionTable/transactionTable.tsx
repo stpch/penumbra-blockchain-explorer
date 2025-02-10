@@ -3,6 +3,7 @@
 import { Box, CheckCheck, Copy } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { FC, MouseEvent, ReactNode, useCallback } from 'react';
+import dayjs from '../../../lib/dayjs';
 import { Transaction } from '../../../lib/types';
 import Pill from '../../pill';
 import Table from '../table';
@@ -25,6 +26,8 @@ const TransactionTable: FC<Props> = props => {
     },
     [router],
   );
+
+  const now = dayjs();
 
   return (
     <Table className={props.className} title={props.title} actions={props.actions}>
@@ -59,7 +62,7 @@ const TransactionTable: FC<Props> = props => {
                 <span className={styles.moreActions}>+{transaction.totalActions - 1}</span>
               )}
             </td>
-            {props.time && <td>{transaction.date.toISOString()}</td>}
+            {props.time && <td>{now.to(transaction.date)}</td>}
           </tr>
         ))}
       </tbody>

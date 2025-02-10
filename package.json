@@ -19,6 +19,7 @@
   "dependencies": {
     "@faker-js/faker": "^9.4.0",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.475.0",
     "next": "^15.1.6",
     "react": "^19.0.0",
