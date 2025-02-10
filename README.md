@@ -73,5 +73,13 @@ checks (linting, typechecking, testing) and uploads a test coverage report to Co
 displayed in this README. Then it triggers a Google Cloud Build which deploys the app to Google
 Cloud Run at <https://penumbra-blockchain-explorer-426149560589.europe-west6.run.app/>.
 
+## What's missing
+
+Due to time constraints the following things didn't make it:
+
+- Some block and transaction view details
+- Table pagination
+- Interactive search input with popover
+
 
 
