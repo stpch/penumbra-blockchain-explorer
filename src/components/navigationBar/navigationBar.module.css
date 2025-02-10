@@ -26,13 +26,24 @@
   gap: calc(0.5 * var(--unit));
 }
 
+.search,
 .price {
   display: flex;
   height: calc(6 * var(--unit));
   align-items: center;
-  justify-content: center;
   padding: 0 calc(2 * var(--unit));
   border-radius: var(--roundedFull);
+}
+
+.search {
+  width: 190px;
+  background: var(--surface);
+  color: var(--textSecondary);
+  gap: calc(1.5 * var(--unit));
+}
+
+.price {
+  justify-content: center;
   background: var(--surfaceLight);
   font-size: var(--fontSizeSm);
   font-weight: 500;

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ChevronsUpDown } from 'lucide-react';
+import { ChevronsUpDown, Search } from 'lucide-react';
 import Image from 'next/image';
 import { FC, ReactNode } from 'react';
 import logo from '../../lib/images/logo.png';
@@ -11,6 +11,7 @@ interface Props {
   className?: string;
 }
 
+// @ts-ignore
 const NavigationBar: FC<Props> = props => (
   <header className={clsx(styles.root, props.className)}>
     <div className={styles.group}>
@@ -26,6 +27,10 @@ const NavigationBar: FC<Props> = props => (
       <Tab href='/transactions' label='Transactions' />
     </Tabs>
     <div className={styles.group}>
+      <div className={styles.search}>
+        <Search size={16} />
+        <span>Search</span>
+      </div>
       <div className={styles.price}>
         <span className={styles.label}>UM Price:</span>
         <span>$0.98</span>
