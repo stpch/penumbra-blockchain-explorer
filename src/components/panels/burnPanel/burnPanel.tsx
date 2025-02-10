@@ -19,6 +19,7 @@ const BurnPanel: FC<Props> = props => (
       </>
     }
     number={86990}
+    numberSuffix=' UM'
     footer='Average'
   >
     <div className={styles.chart}>

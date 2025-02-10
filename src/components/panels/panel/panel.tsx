@@ -11,6 +11,7 @@ export interface Props {
   title: ReactNode;
   number: number;
   footer?: ReactNode;
+  numberSuffix?: string;
 }
 
 const Panel: FC<Props> = props => (
@@ -18,7 +19,7 @@ const Panel: FC<Props> = props => (
     <header className={styles.header}>
       <h2 className={styles.title}>{props.title}</h2>
       <div className={styles.number}>
-        <CountUp end={props.number} duration={1} />
+        <CountUp end={props.number} duration={1} suffix={props.numberSuffix} />
       </div>
     </header>
     {props.children && <div className={styles.chart}>{props.children}</div>}
