@@ -48,9 +48,9 @@ All components are built from scratch as <https://github.com/penumbra-zone/web> 
 <https://ui.penumbra.zone/> don't seem to provide fitting ones for this task.
 
 The project uses CSS modules with the global CSS and theme at `src/lib/css`. It uses modern CSS with
-variables, flex, grid, animations, etc. Most component styles can be overridden by passing
-`classNames`.  PostCSS plugins add additional features such as normalizing and nesting. Tailwind was
-considered but ultimately I went for this approach as I haven't used Tailwind in a while.
+variables, flex, grid, animations, etc. Most component can be overridden by passing `classNames`.
+PostCSS plugins add additional features such as normalizing and nesting. Tailwind was  considered
+but ultimately I went for this approach as I haven't used Tailwind in a while.
 
 The `Poppins` and `Work Sans` fonts are loaded with `next/font/google` whereas `Iosevka` is built
 from source and loaded with `next/font/local` from `src/lib/fonts`.
