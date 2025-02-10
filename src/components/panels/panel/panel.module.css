@@ -55,6 +55,7 @@
 }
 
 .chart {
+  overflow: hidden;
   align-self: flex-end;
   grid-area: span 2 / 2;
   justify-self: flex-end;
