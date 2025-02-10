@@ -70,7 +70,7 @@ Jest tests are collocated with the components. Global test configuration and moc
 
 ## CI/CD
 
-On push, the GitHub Actions workflow `.github/workflows/gpc.yaml` is triggered. It first runs all
+On push, the GitHub Actions workflow `.github/workflows/gcp.yaml` is triggered. It first runs all
 checks (linting, typechecking, testing) and uploads a test coverage report to Codecov with a badge
 displayed at the top of this file. Then it triggers Google Cloud Build which deploys the app to
 Google Cloud Run at <https://penumbra-blockchain-explorer-426149560589.europe-west6.run.app/>.
