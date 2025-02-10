@@ -11,7 +11,6 @@ interface Props {
   className?: string;
 }
 
-// @ts-ignore
 const NavigationBar: FC<Props> = props => (
   <header className={clsx(styles.root, props.className)}>
     <div className={styles.group}>
