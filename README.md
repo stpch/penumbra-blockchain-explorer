@@ -34,11 +34,11 @@ Or check out the deployed version at
 
 | Directory                    | Description                                                           |
 |------------------------------|-----------------------------------------------------------------------|
-| `src/__tests__`              | Global test configuration.                                            |
-| `src/__tests__/__fixtures__` | Block and transaction fixtures generated with `npm run test:codegen`. |
 | `src/app`                    | Next.js app router with layouts and pages.                            |
 | `src/components`             | Components used by layouts and pages.                                 |
 | `src/lib`                    | Logic, helpers, types, assets, etc. used across the app.              |
+| `src/__tests__`              | Global test configuration.                                            |
+| `src/__tests__/__fixtures__` | Block and transaction fixtures generated with `npm run test:codegen`. |
 | `public`                     | Static public assets accessible through the browser.                  |
 
 ## Components, CSS, icons and fonts
