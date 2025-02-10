@@ -6,7 +6,7 @@ PK Labs frontend developer onboarding task.
 
 ## Getting started
 
-1. Make sure Node.js 22.x development is set up.
+1. Make sure Node.js v22 development is set up.
 2. Install dependencies with  `npm install`.
 3. Start the app with `npm run dev`.
 
