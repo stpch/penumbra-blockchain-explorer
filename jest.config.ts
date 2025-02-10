@@ -10,6 +10,7 @@ const config: Config = {
   roots: ['<rootDir>/src/'],
   testEnvironment: 'jsdom',
   testRegex: '.+\\.test\\.tsx?$',
+  setupFilesAfterEnv: ['<rootDir>/src/__tests__/setup.ts'],
 };
 
 export default createJestConfig(config);
