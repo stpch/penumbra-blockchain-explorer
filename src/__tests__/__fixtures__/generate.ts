@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import fs from 'node:fs';
 import path from 'node:path';
 import { generateBlock, generateTransaction } from '../utils';
