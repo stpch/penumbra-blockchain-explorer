@@ -11,11 +11,11 @@ import Table from '../table';
 import styles from './transactionTable.module.css';
 
 interface Props {
-  title?: string;
   actions?: ReactNode;
-  transactions: Transaction[];
   className?: string;
   time?: boolean;
+  title?: string;
+  transactions: Transaction[];
 }
 
 const TransactionTable: FC<Props> = props => {

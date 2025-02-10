@@ -6,12 +6,12 @@ import CountUp from 'react-countup';
 import styles from './panel.module.css';
 
 export interface Props {
-  className?: ReactNode;
   children?: ReactNode;
-  title: ReactNode;
-  number: number;
+  className?: ReactNode;
   footer?: ReactNode;
+  number: number;
   numberSuffix?: string;
+  title: ReactNode;
 }
 
 const Panel: FC<Props> = props => (

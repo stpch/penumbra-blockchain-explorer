@@ -1,16 +1,16 @@
 export interface Block {
-  id: string;
-  height: number;
   date: Date;
-  transactions: number;
+  height: number;
+  id: string;
   proposer: string;
+  transactions: number;
 }
 
 export interface Transaction {
-  id: string;
-  hash: string;
   blockHeight: number;
   date: Date;
+  hash: string;
+  id: string;
   latestAction: string;
   totalActions: number;
 }

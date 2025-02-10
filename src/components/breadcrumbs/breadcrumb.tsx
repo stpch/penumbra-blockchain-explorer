@@ -3,8 +3,8 @@ import { FC } from 'react';
 import styles from './breadcrumbs.module.css';
 
 export interface Props {
-  href?: string;
   children: string;
+  href?: string;
   last?: boolean;
 }
 

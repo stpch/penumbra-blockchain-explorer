@@ -3,10 +3,10 @@ import { FC, ReactNode } from 'react';
 import styles from './view.module.css';
 
 export interface Props {
-  title: string;
-  subtitle: string;
   children?: ReactNode;
   className?: string;
+  subtitle: string;
+  title: string;
 }
 
 const View: FC<Props> = props => (

@@ -10,11 +10,11 @@ import Table from '../table';
 import styles from './blockTable.module.css';
 
 interface Props {
+  actions?: ReactNode;
   blocks: Block[];
   className?: string;
-  title?: string;
-  actions?: ReactNode;
   proposer?: boolean;
+  title?: string;
 }
 
 const BlockTable: FC<Props> = props => {

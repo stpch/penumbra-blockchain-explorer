@@ -3,12 +3,13 @@ import { FC, ReactNode } from 'react';
 import styles from './table.module.css';
 
 interface Props {
+  actions?: ReactNode;
+  alignLastRight?: boolean;
   children: ReactNode;
   className?: string;
-  title?: string;
-  actions?: ReactNode;
   footer?: ReactNode;
-  alignLastRight?: boolean;
+  footerClassName?: string;
+  title?: string;
 }
 
 const Table: FC<Props> = props => (
@@ -22,7 +23,9 @@ const Table: FC<Props> = props => (
     <table className={clsx(styles.table, props.alignLastRight && styles.alignLastRight)}>
       {props.children}
     </table>
-    {props.footer && <footer className={styles.footer}>{props.footer}</footer>}
+    {props.footer && (
+      <footer className={clsx(styles.footer, props.footerClassName)}>{props.footer}</footer>
+    )}
   </section>
 );
 
