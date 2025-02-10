@@ -2,3 +2,43 @@
   --panelGradientStartColor: rgba(193, 166, 204, 0.25);
   --panelGradientStopColor: rgba(193, 166, 204, 0.025);
 }
+
+.chart {
+  display: flex;
+  height: 62px;
+  margin-bottom: calc(0.5 * var(--unit));
+  gap: calc(0.5 * var(--unit));
+}
+
+.bar {
+  position: relative;
+  width: 8px;
+  border-radius: var(--roundedFull);
+  background: var(--surfaceLight);
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--roundedFull);
+    content: "";
+  }
+
+  &::before {
+    background: var(--primaryLight);
+  }
+
+  &::after {
+    bottom: 0;
+    background: var(--secondaryLight);
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(0.25 * var(--unit));
+  margin-bottom: calc(1.5 * var(--unit));
+}
