@@ -1,10 +1,9 @@
 /* istanbul ignore file */
 import { faker } from '@faker-js/faker';
-import { v4 as uuidv4 } from 'uuid';
 import { Block, Transaction } from '../lib/types';
 
 export const generateBlock = (): Block => ({
-  id: uuidv4(),
+  id: faker.string.uuid(),
   height: faker.number.int({ min: 1000000, max: 9999999 }),
   date: faker.date.recent().toISOString(),
   transactions: faker.number.int({ min: 0, max: 30 }),
@@ -15,7 +14,7 @@ export const generateBlock = (): Block => ({
 });
 
 export const generateTransaction = (): Transaction => ({
-  id: uuidv4(),
+  id: faker.string.uuid(),
   hash: faker.finance.bitcoinAddress({ type: 'bech32', network: 'testnet' }),
   blockHeight: faker.number.int({ min: 1000000, max: 9999999 }),
   date: faker.date.recent().toISOString(),
