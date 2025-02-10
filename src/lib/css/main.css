@@ -16,9 +16,6 @@ html {
 body {
   margin: 0;
   background: var(--background);
-  background-position: center 85%;
-  background-repeat: no-repeat;
-  background-size: 75%;
   color: var(--text);
   font-family: var(--fontPrimary);
   font-size: var(--fontSizeBase);

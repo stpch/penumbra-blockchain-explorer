@@ -4,6 +4,7 @@
   min-width: var(--pageMinWidth);
   flex-direction: column;
   justify-content: flex-start;
+  padding-bottom: calc(4 * var(--unit));
   gap: calc(8 * var(--unit));
   overflow-x: hidden;
 }
@@ -23,11 +24,11 @@
 }
 
 @keyframes backgroundAnimation {
-  0% {
+  from {
     transform: rotate(0);
   }
 
-  100% {
+  to {
     transform: rotate(30deg);
   }
 }
