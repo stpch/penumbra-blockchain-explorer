@@ -28,7 +28,7 @@
   transform-origin: bottom;
 
   &.top {
-    animation: barAnimation 500ms 500ms linear forwards;
+    animation: barAnimation 500ms linear 500ms forwards;
     background: var(--surfaceLight);
   }
 
