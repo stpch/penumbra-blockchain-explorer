@@ -1,6 +1,7 @@
 .root {
-  --panelGradientStartColor: rgba(244, 156, 67, 0.25);
-  --panelGradientStopColor: rgba(244, 156, 67, 0.025);
+  /* FIXME: !important workaround for CSS import order issue */
+  --panelGradientStartColor: rgba(244, 156, 67, 0.25) !important;
+  --panelGradientStopColor: rgba(244, 156, 67, 0.025) !important;
 }
 
 .chart {
